@@ -1,11 +1,11 @@
-import { BookOpen, Code, Server, Terminal } from "lucide-react";
+import { BookOpen, Code, Server, Terminal, Book, Video } from "lucide-react";
 
 export default function ExploreSection() {
   const products = [
     {
       title: "Agile Blog",
       description:
-        "Tutorials, guides, and dev workflows for building and deploying production apps with MERN, Rails + React, and modern cloud tools.",
+        "In-depth tutorials, guides, and engineering workflows for building and deploying full-stack apps using modern web technologies.",
       icon: <BookOpen className="h-10 w-10 text-black" />,
       action: {
         label: "Visit →",
@@ -14,20 +14,54 @@ export default function ExploreSection() {
       },
     },
     {
-      title: "Agile CMS",
+      title: "Agile Coder YT",
       description:
-        "A powerful, multi-tenant blog CMS designed for modern content creators and SaaS platforms.",
-      icon: <Server className="h-10 w-10 text-black" />,
+        "Watch in-depth tutorials, coding walkthroughs, and creative tech content on the Agile Coder YouTube channel.",
+      icon: <Video className="h-10 w-10 text-black" />,
       action: {
-        label: "Coming Soon",
-        type: "text",
+        label: "Go to Channel →",
+        type: "link",
+        href: "https://www.youtube.com/@AgileCoderYT", 
+      },
+    },
+    {
+      title: "Published Books",
+      description:
+        "Explore our books website to discover fascinating insights and practical knowledge across tech and development.",
+      icon: <Book className="h-10 w-10 text-black" />,
+      action: {
+        label: "Have a look →",
+        type: "link",
+        href: "https://books.agilecoder.in", 
+      },
+    },
+    {
+      title: "Artful Coding",
+      description:
+        "Artful Coding is a creative playground where code becomes art through generative design, fractals, simulations, and data visualizations.",
+      icon: <Code className="h-10 w-10 text-black" />,
+      action: {
+        label: "Visit →",
+        type: "link",
+        href: "https://artfulcoding.in", 
       },
     },
     {
       title: "Starter Templates",
       description:
-        "Production-ready starter templates for apps using React, Next.js, Express, and more.",
+        "Ready-to-use boilerplates to kickstart your next project using TypeScript, React, Next.js, Express, and more.",
       icon: <Code className="h-10 w-10 text-black" />,
+      action: {
+        label: "Visit →",
+        type: "link",
+        href: "https://agilecoder.gumroad.com/l/node-ts-starter", 
+      },
+    },
+    {
+      title: "Agile CMS",
+      description:
+        "A powerful, multi-tenant blog CMS designed for modern content creators and SaaS platforms.",
+      icon: <Server className="h-10 w-10 text-black" />,
       action: {
         label: "Coming Soon",
         type: "text",

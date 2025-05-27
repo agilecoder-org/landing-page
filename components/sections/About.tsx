@@ -7,7 +7,6 @@ export default function About() {
 
           <p className="text-lg text-gray-700 mb-8">
             AgileCoder was founded by a single passionate developer with a vision for building powerful yet simple software.
-            What started as a solo endeavor has grown into a collective of developers committed to helping others build better applications, faster.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">

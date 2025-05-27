@@ -15,7 +15,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-8 flex items-center justify-between">
         <Link href="/" className='flex items-center gap-4 group'>
           <img className='rounded-full w-10' src="/agilecoder-dark.png" alt='Agile Coder Logo' />
-          <h1 className="group-hover:text-gray-300 sm:text-xl text-lg font-semibold">Agile Coder</h1>
+          <h1 className="group-hover:text-gray-300 sm:text-xl text-lg font-semibold">AgileCoder</h1>
         </Link>
         <nav className="space-x-6">
           {links.map((link) => {

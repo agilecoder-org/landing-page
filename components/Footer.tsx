@@ -71,7 +71,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
-            <a href="mailto:agilecoder@outlook.in" className="text-gray-400 hover:text-white">agilecoder@outlook.in</a>
+            <a href="mailto:support@agilecoder.in" className="text-gray-400 hover:text-white">support@agilecoder.in</a>
           </div>
         </div>
 

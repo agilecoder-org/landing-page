@@ -1,8 +1,9 @@
 import { getAllPosts } from "@/utils/getPosts"
 import type { PostData } from "@/types"
-import BlogCard from "@/components/BlogCard"
+import BlogPageClient from '@/components/BlogPage';
 
 export default async function BlogPage() {
+
   const posts: PostData[] = getAllPosts([
     "title",
     "date",
@@ -13,18 +14,6 @@ export default async function BlogPage() {
   ])
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-black mb-16">
-          All Blog Posts
-        </h1>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <BlogPageClient posts={posts} />
   )
 }

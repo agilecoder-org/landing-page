@@ -3,6 +3,7 @@ title: 'The Rise of Low-Code and No-Code Platforms in the Business World'
 excerpt: "Creating a developer-friendly business isn't just about improving workflows—it's about fostering an environment that empowers developers to be their best. In this blog, we explore why prioritizing developer experience can drive productivity, reduce turnover, and ultimately lead to better products and faster time-to-market."
 date: '2025-05-11'
 author: 'Smruti R Badatya'
+coverImage: '/the-rise-of-low-code-and-no-code-platforms-in-the-business-world.jpg'
 ---
 
 The buzz around low-code and no-code platforms is growing—and for good reason. These tools are empowering non-technical users to build applications, automate workflows, and test ideas without writing traditional code. For businesses, that means faster delivery, lower costs, and greater agility. But does this mean developers are on the path to being replaced?

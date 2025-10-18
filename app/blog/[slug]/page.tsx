@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation"
 import { getPostBySlug, getAllPosts } from "@/utils/getPosts"
-import Link from "next/link"
 import Footer from "@/components/Footer"
 import { Metadata } from "next"
-import PostContent from "@/components/PostContent" // Import the new client-side component
+import PostContent from "@/components/PostContent"
 
 interface Params {
   params: {
@@ -36,18 +35,10 @@ export default async function Post({ params }: Params) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container max-w-[900px] w-full mx-auto px-10 py-8">
-        <Link href="/#blog" className="text-black hover:underline mb-8 inline-block">
-          ← Back to all posts
-        </Link>
-
-        {/* Render markdown content on the client */}
-        <PostContent post={post as any} />
-      </div>
-
+    <>
+      <PostContent post={post as any} />
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero"
 import ToolsSection from "@/components/sections/ExploreSection"
-import ServicesSection from "@/components/sections/ServicesSection"
 import WhyAgileCoder from "@/components/sections/WhyAgileCoder"
 import BlogPreview from "@/components/sections/BlogPreview"
 import About from "@/components/sections/About"
@@ -15,7 +14,6 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <ToolsSection />
-      <ServicesSection />
       <WhyAgileCoder />
       <BlogPreview posts={posts} />
       <About />

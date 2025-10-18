@@ -1,50 +1,84 @@
+"use client"
+import { motion } from "framer-motion";
 import { Smile, BrainCog, Rocket, WandSparkles } from "lucide-react";
 
 export default function WhyAgileCoder() {
   const values = [
     {
       title: "Minimal & Clear",
-      description:
-        "We prioritize simplicity — clean designs and minimal code, ensuring easy maintenance and clarity.",
-      icon: <Smile className="h-10 w-10 text-black" />,
+      description: "Clean designs and maintainable code.",
+      icon: <Smile className="h-8 w-8" />
     },
     {
-      title: "AI-Enhanced Workflows",
-      description:
-        "We leverage AI to automate processes, speed up development, and eliminate repetitive tasks for efficiency.",
-      icon: <BrainCog className="h-10 w-10 text-black" />,
+      title: "AI-Enhanced",
+      description: "Leveraging AI for efficiency.",
+      icon: <BrainCog className="h-8 w-8" />
     },
     {
       title: "Fast Delivery",
-      description:
-        "With our streamlined workflows and tools, we ensure faster delivery without compromising quality.",
-      icon: <Rocket className="h-10 w-10 text-black" />,
+      description: "Quick turnaround without compromise.",
+      icon: <Rocket className="h-8 w-8" />
     },
     {
       title: "Developer First",
-      description:
-        "Focused on providing developers with intuitive tools and a smooth, enjoyable experience during development.",
-      icon: <WandSparkles className="h-10 w-10 text-black" />,
-    },
+      description: "Intuitive tools and smooth experience.",
+      icon: <WandSparkles className="h-8 w-8" />
+    }
   ];
 
-  return (
-    <section id="why" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why AgileCoder?</h2>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold text-center mb-12"
+        >
+          Why AgileCoder?
+        </motion.h2>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {values.map((value, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white rounded-xl p-6 text-center shadow-sm"
             >
-              <div className="flex justify-center mb-4">{value.icon}</div>
+              <div className="inline-block text-black mb-4">{value.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
               <p className="text-gray-600">{value.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

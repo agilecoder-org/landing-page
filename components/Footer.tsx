@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
+import Link from "next/link";
 
 export default function ImprovedFooter() {
   const navLinks = [
@@ -176,12 +177,12 @@ export default function ImprovedFooter() {
               transition={{ delay: 0.5 }}
               className="flex gap-6 text-sm"
             >
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">
+              <Link href="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">
+              </Link>
+              <Link href="/terms-of-service" className="text-gray-500 hover:text-white transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>

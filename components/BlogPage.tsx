@@ -4,6 +4,7 @@ import { PostData } from '@/types';
 import { motion } from 'framer-motion';
 import { Search, Calendar, TrendingUp, Clock } from 'lucide-react';
 import { useState, useMemo } from 'react';
+import BackButton from './BackToHome';
 
 interface BlogPageClientProps {
   posts: PostData[];
@@ -48,6 +49,7 @@ export default async function BlogPageClient({ posts }: BlogPageClientProps) {
     <section className="py-20 bg-gray-50 min-h-screen">
       <div className="container mx-auto px-4">
         {/* Header Section */}
+        <BackButton />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

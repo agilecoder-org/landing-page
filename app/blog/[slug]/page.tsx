@@ -11,11 +11,59 @@ interface Params {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const post = getPostBySlug(params.slug, ["title", "excerpt"])
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "excerpt",
+    "coverImage",
+    "slug",
+  ])
+
+  if (!post) {
+    return {
+      title: "Post Not Found | AgileCoder",
+      description: "The post you’re looking for does not exist.",
+    }
+  }
+
+  const baseUrl = "https://www.agilecoder.in"
+  const postUrl = `${baseUrl}/blog/${post.slug}`
+  const imageUrl = post.coverImage
+    ? `${baseUrl}${post.coverImage}`
+    : `${baseUrl}/default-og.jpg`
 
   return {
     title: `${post.title} | AgileCoder`,
-    description: post.excerpt,
+    description: post.excerpt || "Read the latest insights on AgileCoder.",
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      title: `${post.title} | AgileCoder`,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: "AgileCoder",
+      type: "article",
+      locale: "en_US",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | AgileCoder`,
+      description: post.excerpt,
+      images: [imageUrl],
+      creator: "@agilecoder_in",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   }
 }
 

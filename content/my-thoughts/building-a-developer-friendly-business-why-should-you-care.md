@@ -3,7 +3,7 @@ title: 'Building a Developer Friendly Business: Why Should You Care?'
 excerpt: "Creating a developer-friendly business isn't just about improving workflows—it's about fostering an environment that empowers developers to be their best. In this blog, we explore why prioritizing developer experience can drive productivity, reduce turnover, and ultimately lead to better products and faster time-to-market."
 date: '2025-05-11'
 author: 'Smruti R Badatya'
-coverImage: '/building-a-developer-friendly-business-why-should-you-care.jpg'
+coverImage: '/assets/building-a-developer-friendly-business-why-should-you-care.jpg'
 ---
 
 In today’s fast-paced, tech-driven world, building a developer-friendly business is more than just a trend—it’s a strategic move that can lead to better software, faster delivery, and a more engaged development team. In this blog, we’ll dive into why prioritizing developer experience (DX) is essential for your company’s growth and success.

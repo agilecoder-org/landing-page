@@ -57,10 +57,10 @@ export default function ImprovedAbout() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About AgileCoder
+              About The Lab
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Founded by a passionate developer with a vision for building powerful yet simple software that makes a difference.
+              A digital playground for building, experimenting, and sharing the software engineering journey.
             </p>
           </motion.div>
 

@@ -8,6 +8,7 @@ export default function Header() {
   const links = [
     { name: "Home", url: "/" },
     { name: "Blog", url: "/blog" },
+    { name: "Books", url: "/books" }
   ];
 
   return (
@@ -24,9 +25,8 @@ export default function Header() {
               <Link
                 key={link.url}
                 href={link.url}
-                className={`transition ${
-                  isActive ? 'text-white brightness-125' : 'text-white brightness-75 hover:brightness-100'
-                }`}
+                className={`transition ${isActive ? 'text-white brightness-125' : 'text-white brightness-75 hover:brightness-100'
+                  }`}
               >
                 {link.name}
               </Link>

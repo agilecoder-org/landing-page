@@ -13,19 +13,19 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Innovate. Build. Deliver.
+            Code. Create. Experiment.
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12">
-            We create developer tools, resources, and build custom solutions for your business.
+            The central headquarters for projects, libraries, and digital experiments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#explore" className="bg-white text-black hover:bg-gray-200 font-semibold py-3 px-8 rounded-lg transition">
-              Explore Products
+              href="#projects" className="bg-white text-black hover:bg-gray-200 font-semibold py-3 px-8 rounded-lg transition">
+              View Projects
             </Link>
             <Link
-              href="#contact" className="border border-white hover:bg-white hover:text-black font-semibold py-3 px-8 rounded-lg transition">
-              Hire Us
+              href="/blog" className="border border-white hover:bg-white hover:text-black font-semibold py-3 px-8 rounded-lg transition">
+              Read Blog
             </Link>
           </div>
         </motion.div>

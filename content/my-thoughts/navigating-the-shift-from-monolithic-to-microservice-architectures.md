@@ -3,7 +3,7 @@ title: 'Navigating the Shift from Monolithic to Microservices Architecture'
 excerpt: "As digital demands grow, traditional monolithic systems struggle to keep up. This blog explores why transitioning to microservices architecture isn't just a technical upgrade—it's a strategic move toward scalability, agility, and long-term innovation."
 date: '2025-05-11'
 author: 'Smruti R Badatya'
-coverImage: '/navigating-the-shift-from-monolithic-to-microservice-architectures.jpg'
+coverImage: '/assets/navigating-the-shift-from-monolithic-to-microservice-architectures.jpg'
 ---
 
 As digital demands grow, traditional monolithic systems struggle to keep up. This blog explores why transitioning to microservices architecture isn't just a technical upgrade—it's a strategic move toward scalability, agility, and long-term innovation.

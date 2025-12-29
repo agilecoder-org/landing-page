@@ -5,11 +5,10 @@ import Link from "next/link";
 
 export default function ImprovedFooter() {
   const navLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "Our Offerings", href: "#offerings" },
-    { label: "Blog", href: "#blog" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Blog", href: "/blog" },
+    { label: "Books", href: "/books" },
   ];
 
   const socialLinks = [
@@ -66,9 +65,9 @@ export default function ImprovedFooter() {
           {/* Brand Section */}
           <motion.div variants={itemVariants} transition={{ duration: 0.5 }}>
             <div className="flex items-center gap-3 mb-4">
-              <img 
-                src="/agilecoder-dark.png" 
-                alt="AgileCoder Logo" 
+              <img
+                src="/agilecoder-dark.png"
+                alt="AgileCoder Logo"
                 className="w-10 h-10 rounded-full"
               />
               <h3 className="text-2xl font-bold">AgileCoder</h3>

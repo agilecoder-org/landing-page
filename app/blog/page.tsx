@@ -1,55 +1,43 @@
-import { getAllPosts } from "@/utils/getPosts"
-import type { PostData } from "@/types"
-import BlogPageClient from "@/components/BlogPage"
-import type { Metadata } from "next"
+import { getAllPosts, getAllCategories } from "@/utils/getPosts"
+import CategoryList from "@/components/CategoryList"
+import { BlogSidebar } from "@/components/BlogSidebar"
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "AgileCoder Blog | Tutorials, Insights & Developer Resources",
-  description:
-    "Explore in-depth tutorials, insights, and engineering workflows from AgileCoder — your hub for modern web development and developer tools.",
-  alternates: {
-    canonical: "https://www.agilecoder.in/blog",
-  },
-  openGraph: {
-    title: "AgileCoder Blog | Tutorials, Insights & Developer Resources",
-    description:
-      "Read the latest developer insights, tutorials, and updates from AgileCoder — where innovation meets code.",
-    url: "https://www.agilecoder.in/blog",
-    siteName: "AgileCoder",
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://www.agilecoder.in/default-og.png",
-        width: 1200,
-        height: 630,
-        alt: "AgileCoder Blog Cover",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AgileCoder Blog | Tutorials, Insights & Developer Resources",
-    description:
-      "Stay updated with the latest tech insights and tutorials from AgileCoder.",
-    images: ["https://www.agilecoder.in/default-og.png"],
-    creator: "@agilecoder_in",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: "AgileCoder Blog | Engineering & Tech Insights",
+  description: "Explore in-depth tutorials, system design patterns, and engineering workflows.",
 }
 
 export default async function BlogPage() {
-  const posts: PostData[] = getAllPosts([
+  const posts = getAllPosts([
     "title",
     "date",
     "slug",
     "author",
     "excerpt",
     "coverImage",
+    "tags",
+    "readingTime",
   ])
 
-  return <BlogPageClient posts={posts} />
+  const categories = getAllCategories()
+
+  return (
+    <div className="min-h-screen pb-20">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_280px]">
+          {/* Main Content: 2/3 roughly by grid ratio on large screens, or flex-grow */}
+          <div className="space-y-8">
+            <h2 className="text-2xl font-bold tracking-tight">Recent Posts</h2>
+            <CategoryList posts={posts} />
+          </div>
+
+          {/* Sidebar: 1/3 roughly */}
+          <div className="lg:sticky lg:top-10 h-fit">
+            <BlogSidebar categories={categories} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

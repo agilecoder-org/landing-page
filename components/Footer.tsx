@@ -52,7 +52,7 @@ export default function ImprovedFooter() {
   } as const;
 
   return (
-    <footer className="bg-black text-white pt-16 pb-8 relative">
+    <footer className="bg-background text-foreground pt-16 pb-8 relative border-t border-border">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
         <motion.div
@@ -72,10 +72,10 @@ export default function ImprovedFooter() {
               />
               <h3 className="text-2xl font-bold">AgileCoder</h3>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed">
               Innovate. Build. Deliver.
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Building the future, one line of code at a time.
             </p>
           </motion.div>
@@ -88,7 +88,7 @@ export default function ImprovedFooter() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors inline-flex items-center group"
+                    className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center group"
                   >
                     <span className="group-hover:translate-x-1 transition-transform">
                       {link.label}
@@ -111,14 +111,14 @@ export default function ImprovedFooter() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gray-800 p-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700 transition-all"
+                  className="bg-secondary p-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all"
                   aria-label={label}
                 >
                   <Icon className="h-5 w-5" />
                 </motion.a>
               ))}
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Follow us for updates and insights
             </p>
           </motion.div>
@@ -129,13 +129,13 @@ export default function ImprovedFooter() {
             <div className="space-y-3">
               <a
                 href="mailto:support@agilecoder.in"
-                className="text-gray-400 hover:text-white transition-colors block"
+                className="text-muted-foreground hover:text-foreground transition-colors block"
               >
                 support@agilecoder.in
               </a>
               <a
                 href="mailto:agilecoder@outlook.in"
-                className="text-gray-400 hover:text-white transition-colors block"
+                className="text-muted-foreground hover:text-foreground transition-colors block"
               >
                 agilecoder@outlook.in
               </a>
@@ -144,7 +144,7 @@ export default function ImprovedFooter() {
         </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <motion.p
@@ -152,7 +152,7 @@ export default function ImprovedFooter() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-gray-500 text-sm text-center md:text-left"
+              className="text-muted-foreground text-sm text-center md:text-left"
             >
               &copy; {new Date().getFullYear()} AgileCoder. All rights reserved.
             </motion.p>
@@ -163,7 +163,7 @@ export default function ImprovedFooter() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-gray-500 text-sm flex items-center gap-2"
+              className="text-muted-foreground text-sm flex items-center gap-2"
             >
               Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> by AgileCoder
             </motion.p>
@@ -176,10 +176,10 @@ export default function ImprovedFooter() {
               transition={{ delay: 0.5 }}
               className="flex gap-6 text-sm"
             >
-              <Link href="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
+              <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms-of-service" className="text-gray-500 hover:text-white transition-colors">
+              <Link href="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">
                 Terms of Service
               </Link>
             </motion.div>
@@ -195,7 +195,7 @@ export default function ImprovedFooter() {
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-white text-black p-3 rounded-full shadow-lg hover:shadow-xl transition-all z-50"
+        className="fixed bottom-8 right-8 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:shadow-xl transition-all z-50"
         aria-label="Scroll to top"
       >
         <ArrowUp className="h-6 w-6" />

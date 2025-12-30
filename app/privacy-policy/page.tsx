@@ -3,12 +3,12 @@ import React from 'react'
 
 const PrivacyPolicy = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16 text-gray-800">
+    <div className="max-w-4xl mx-auto px-6 py-16 text-foreground">
       <div>
         <BackButton />
       </div>
-      <h1 className="text-4xl font-bold mb-4 text-gray-900">Privacy Policy</h1>
-      <p className="text-sm text-gray-500 mb-8">
+      <h1 className="text-4xl font-bold mb-4 text-foreground">Privacy Policy</h1>
+      <p className="text-sm text-muted-foreground mb-8">
         <strong>Effective Date:</strong> October 19, 2025
       </p>
 
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
         provide or that we collect when you access or use our services on{' '}
         <a
           href="https://www.agilecoder.in"
-          className="text-blue-600 hover:underline"
+          className="text-primary hover:underline"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
         in this Policy. This Privacy Policy has been created with the help of the{' '}
         <a
           href="https://listwr.com/privacy-policy-generator"
-          className="text-blue-600 hover:underline"
+          className="text-primary hover:underline"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -38,13 +38,13 @@ const PrivacyPolicy = () => {
       </p>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold mt-10 text-gray-900">Entity and Contact Information</h2>
+        <h2 className="text-2xl font-semibold mt-10 text-foreground">Entity and Contact Information</h2>
         <p>
           This Privacy Policy is published on behalf of an individual operator located in Odisha, India. Business
           names and registered addresses are not applicable in this case. All references to “I”, “me”, or “my”
           refer to the individual operator.
         </p>
-        <h3 className="text-xl font-semibold mt-6 text-gray-800">How to Contact Us</h3>
+        <h3 className="text-xl font-semibold mt-6 text-foreground">How to Contact Us</h3>
         <p>
           If you have questions, requests, or concerns about this Privacy Policy, please contact us at:{' '}
           <strong>support@agilecoder.in</strong>.
@@ -52,34 +52,34 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900">1. Information We Collect</h2>
+        <h2 className="text-2xl font-semibold text-foreground">1. Information We Collect</h2>
         <p>
           We collect multiple types of information to operate effectively and provide you the best experience.
           The categories of information we collect include:
         </p>
 
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-gray-800">1.1. Information You Provide Directly</h3>
+          <h3 className="text-xl font-semibold text-foreground">1.1. Information You Provide Directly</h3>
           <p>
             When you register, create an account, fill forms, contact us, or otherwise communicate with us, you
             may provide personal information such as your name, email address, phone number, billing and payment
             information, profile information, and other identifiers.
           </p>
 
-          <h3 className="text-xl font-semibold text-gray-800">1.2. Automatically Collected Information</h3>
+          <h3 className="text-xl font-semibold text-foreground">1.2. Automatically Collected Information</h3>
           <p>
             We automatically collect technical and usage data when you interact with the Platform, which may
             include IP address, device identifiers, device model and operating system, browser type, language
             preferences, access times, pages visited, and performance metrics.
           </p>
 
-          <h3 className="text-xl font-semibold text-gray-800">1.3. Location Data</h3>
+          <h3 className="text-xl font-semibold text-foreground">1.3. Location Data</h3>
           <p>
             We may collect approximate or precise location data from your device if you grant permissions. You
             can control location access in your device settings.
           </p>
 
-          <h3 className="text-xl font-semibold text-gray-800">1.4. Payment and Transaction Data</h3>
+          <h3 className="text-xl font-semibold text-foreground">1.4. Payment and Transaction Data</h3>
           <p>
             When you make purchases or use paid features, we collect payment data processed by secure
             third-party payment processors. We do not store full payment card numbers on our servers unless
@@ -89,7 +89,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900">2. How We Use Information</h2>
+        <h2 className="text-2xl font-semibold text-foreground">2. How We Use Information</h2>
         <p>We use collected information for the following purposes:</p>
         <ul className="list-disc list-inside space-y-2">
           <li>To provide, operate, maintain, and improve our platform and related services.</li>
@@ -101,7 +101,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900">3. Cookies and Tracking Technologies</h2>
+        <h2 className="text-2xl font-semibold text-foreground">3. Cookies and Tracking Technologies</h2>
         <p>
           We use essential cookies for functionality and may use analytics cookies to understand how our site is
           used. You can manage or disable cookies through your browser settings.
@@ -109,7 +109,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900 flex items-center gap-2">
+        <h2 className="text-2xl font-semibold text-foreground flex items-center gap-2">
           4. Advertising and Analytics
           <img
             src="https://listwr.com/badge/analytics.svg"
@@ -122,7 +122,7 @@ const PrivacyPolicy = () => {
           Learn more about Google Analytics privacy here:{' '}
           <a
             href="https://policies.google.com/technologies/partner-sites"
-            className="text-blue-600 hover:underline"
+            className="text-primary hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -133,7 +133,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900">5. Data Retention and Security</h2>
+        <h2 className="text-2xl font-semibold text-foreground">5. Data Retention and Security</h2>
         <p>
           We retain personal information as long as necessary for business, legal, or compliance purposes. We
           apply administrative, technical, and physical safeguards to protect data, including encryption and
@@ -142,7 +142,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900">6. Children’s Privacy</h2>
+        <h2 className="text-2xl font-semibold text-foreground">6. Children’s Privacy</h2>
         <p>
           Our Platform is not directed to children under 13. We do not knowingly collect data from minors. If
           you believe a child has provided information, please contact us to remove it.
@@ -150,14 +150,14 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="space-y-4 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-900">7. Your Rights</h2>
+        <h2 className="text-2xl font-semibold text-foreground">7. Your Rights</h2>
         <p>
           You may have the right to access, correct, or delete your personal data, and to withdraw consent where
           applicable. Contact us at <strong>support@agilecoder.in</strong> to exercise these rights.
         </p>
       </section>
 
-      <section className="space-y-4 mt-10 border-t border-gray-200 pt-8">
+      <section className="space-y-4 mt-10 border-t border-border pt-8">
         <p>
           <strong>Publisher:</strong> agilecoder.in (Odisha, India)
         </p>

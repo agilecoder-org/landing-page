@@ -1,7 +1,13 @@
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import Header from "@/components/Header"
-import "@/styles/globals.css"
+import "./globals.css"
 import Script from "next/script"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ""
 
@@ -69,7 +75,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <div id="top" />
         <Header />
         {children}

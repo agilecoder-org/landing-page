@@ -7,10 +7,10 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ slug }: BreadcrumbsProps) {
     return (
-        <nav className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 overflow-x-auto whitespace-nowrap pb-2">
+        <nav className="flex items-center text-sm text-muted-foreground overflow-x-auto whitespace-nowrap pb-2">
             <Link
                 href="/tech-blog"
-                className="flex items-center hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+                className="flex items-center hover:text-foreground transition-colors"
             >
                 <Home className="w-4 h-4 mr-1" />
                 Tech Blog
@@ -22,15 +22,15 @@ export default function Breadcrumbs({ slug }: BreadcrumbsProps) {
 
                 return (
                     <div key={path} className="flex items-center">
-                        <ChevronRight className="w-4 h-4 mx-1 text-neutral-300 dark:text-neutral-600" />
+                        <ChevronRight className="w-4 h-4 mx-1 text-muted-foreground" />
                         {isLast ? (
-                            <span className="font-medium text-neutral-900 dark:text-neutral-100 capitalize">
+                            <span className="font-medium text-foreground capitalize">
                                 {segment.replace(/-/g, " ")}
                             </span>
                         ) : (
                             <Link
                                 href={path}
-                                className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors capitalize"
+                                className="hover:text-foreground transition-colors capitalize"
                             >
                                 {segment.replace(/-/g, " ")}
                             </Link>

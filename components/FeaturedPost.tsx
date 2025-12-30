@@ -9,7 +9,7 @@ interface FeaturedPostProps {
 
 export function FeaturedPost({ post }: FeaturedPostProps) {
     return (
-        <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white shadow-xl transition-all hover:shadow-2xl">
+        <div className="relative overflow-hidden rounded-2xl bg-card text-card-foreground shadow-xl transition-all hover:shadow-2xl">
             <div className="absolute inset-0">
                 {post.coverImage && (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -19,12 +19,12 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                         className="h-full w-full object-cover opacity-50 transition-transform duration-500 hover:scale-105"
                     />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
             </div>
 
             <div className="relative flex h-[500px] flex-col justify-end p-8 md:p-12">
                 <div className="max-w-2xl space-y-4">
-                    <div className="flex items-center gap-2 text-sm text-neutral-300">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <time dateTime={post.date}>{formatDate(post.date)}</time>
                         {post.tags?.[0] && (
                             <>
@@ -40,14 +40,14 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                         </Link>
                     </h1>
 
-                    <p className="line-clamp-2 text-lg text-neutral-300 md:text-xl">
+                    <p className="line-clamp-2 text-lg text-muted-foreground md:text-xl">
                         {post.excerpt}
                     </p>
 
                     <div className="pt-4">
                         <Link
                             href={`/tech-blog/${post.slug}`}
-                            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-200"
+                            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                         >
                             Read Article
                             <ArrowRight className="h-4 w-4" />

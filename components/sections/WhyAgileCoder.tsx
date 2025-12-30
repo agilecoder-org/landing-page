@@ -48,7 +48,7 @@ export default function WhyAgileCoder() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -71,11 +71,11 @@ export default function WhyAgileCoder() {
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-xl p-6 text-center shadow-sm"
+              className="bg-card rounded-xl p-6 text-center shadow-sm"
             >
-              <div className="inline-block text-black mb-4">{value.icon}</div>
+              <div className="inline-block text-foreground mb-4">{value.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <p className="text-muted-foreground">{value.description}</p>
             </motion.div>
           ))}
         </motion.div>

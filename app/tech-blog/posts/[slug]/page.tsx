@@ -73,70 +73,78 @@ export default async function BlogEntry({ params }: Params) {
 
     return (
         <div className="min-h-screen bg-background">
-            <div className="container max-w-7xl mx-auto px-4 py-8 lg:py-12">
-                <div className="grid grid-cols-1 gap-10 xl:grid-cols-[1fr_300px]">
-                    {/* Main Content */}
-                    <article className="prose dark:prose-invert max-w-none">
-                        <div className="mb-4 text-sm text-muted-foreground">
-                            <Link href="/tech-blog" className="hover:underline">Tech Blog</Link> / <span className="text-foreground">{post.title}</span>
-                        </div>
-
-                        <h1 className="mb-4 text-4xl font-bold tracking-tight lg:text-5xl">
-                            {post.title}
-                        </h1>
-
-                        <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6 text-sm">
-                            <div className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4" />
-                                {formatDate(post.date)}
+            <div className="min-h-screen bg-background pt-24">
+                <div className="container max-w-7xl mx-auto px-4 py-8 lg:py-12">
+                    <div className="grid grid-cols-1 gap-10 xl:grid-cols-[1fr_300px]">
+                        {/* Main Content */}
+                        <article className="prose prose-lg dark:prose-invert max-w-none text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground prose-a:text-primary">
+                            <div className="mb-4 text-sm text-muted-foreground">
+                                <Link href="/tech-blog" className="hover:underline">Tech Blog</Link> / <span className="text-foreground">{post.title}</span>
                             </div>
-                            {post.author && (
+
+                            <h1 className="mb-4 text-4xl font-bold tracking-tight lg:text-5xl text-foreground">
+                                {post.title}
+                            </h1>
+
+                            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6 text-sm">
                                 <div className="flex items-center gap-2">
-                                    <User className="h-4 w-4" />
-                                    {post.author}
+                                    <Calendar className="h-4 w-4" />
+                                    {formatDate(post.date)}
+                                </div>
+                                {post.author && (
+                                    <div className="flex items-center gap-2">
+                                        <User className="h-4 w-4" />
+                                        {post.author}
+                                    </div>
+                                )}
+                                <div className="flex items-center gap-2">
+                                    <Clock className="h-4 w-4" />
+                                    {post.readingTime || Math.ceil(post.content.split(/\s+/).length / 200)} min read
+                                </div>
+                            </div>
+
+                            {post.tags && (
+                                <div className="mb-8 not-prose">
+                                    <Tags tags={post.tags} />
                                 </div>
                             )}
-                            <div className="flex items-center gap-2">
-                                <Clock className="h-4 w-4" />
-                                {post.readingTime || Math.ceil(post.content.split(/\s+/).length / 200)} min read
+
+                            <div className="rounded-xl border bg-muted w-full aspect-video object-cover mb-10 shadow-sm overflow-hidden relative">
+                                {post.coverImage ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img
+                                        src={post.coverImage}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-muted/50 to-muted text-muted-foreground/50">
+                                        <span className="text-lg font-medium uppercase tracking-widest opacity-40">AgileCoder</span>
+                                    </div>
+                                )}
                             </div>
-                        </div>
 
-                        {post.tags && (
-                            <div className="mb-8 not-prose">
-                                <Tags tags={post.tags} />
+                            <MDX code={post.content} />
+                        </article>
+
+                        {/* Sidebar */}
+                        <aside className="hidden xl:block">
+                            <div className="sticky top-24 space-y-8">
+                                <TableOfContents headings={headings} />
                             </div>
-                        )}
+                        </aside>
+                    </div>
 
-                        {post.coverImage && (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img
-                                src={post.coverImage}
-                                alt={post.title}
-                                className="rounded-xl border bg-muted w-full aspect-video object-cover mb-10 shadow-sm"
-                            />
-                        )}
-
-                        <MDX code={post.content} />
-                    </article>
-
-                    {/* Sidebar */}
-                    <aside className="hidden xl:block">
-                        <div className="sticky top-10 space-y-8">
-                            <TableOfContents headings={headings} />
-                        </div>
-                    </aside>
-                </div>
-
-                <hr className="mt-12" />
-                <div className="flex justify-center py-6 lg:py-10">
-                    <Link
-                        href="/tech-blog"
-                        className="group flex items-center gap-2 text-muted-foreground hover:text-foreground"
-                    >
-                        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-                        See all posts
-                    </Link>
+                    <hr className="mt-12" />
+                    <div className="flex justify-center py-6 lg:py-10">
+                        <Link
+                            href="/tech-blog"
+                            className="group flex items-center gap-2 text-muted-foreground hover:text-foreground"
+                        >
+                            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+                            See all posts
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

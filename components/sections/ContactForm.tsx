@@ -91,7 +91,7 @@ export default function ImprovedContactForm() {
   } as const
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -103,7 +103,7 @@ export default function ImprovedContactForm() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-muted-foreground text-lg">
               Have a project in mind? Let's talk about how we can help.
             </p>
           </motion.div>
@@ -118,11 +118,10 @@ export default function ImprovedContactForm() {
                 className="mb-8 overflow-hidden"
               >
                 <div
-                  className={`p-4 rounded-xl flex items-center gap-3 ${
-                    formStatus.success
-                      ? "bg-green-50 text-green-700 border border-green-200"
-                      : "bg-red-50 text-red-700 border border-red-200"
-                  }`}
+                  className={`p-4 rounded-xl flex items-center gap-3 ${formStatus.success
+                      ? "bg-green-500/10 text-green-500 border border-green-500/20"
+                      : "bg-destructive/10 text-destructive border border-destructive/20"
+                    }`}
                 >
                   {formStatus.success ? (
                     <CheckCircle className="h-5 w-5 flex-shrink-0" />
@@ -142,19 +141,18 @@ export default function ImprovedContactForm() {
             whileInView="visible"
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="bg-white rounded-2xl shadow-lg p-8 md:p-10"
+            className="bg-card rounded-2xl shadow-lg p-8 md:p-10"
           >
             <div className="space-y-6">
               {/* Name Field */}
               <motion.div variants={itemVariants} transition={{ duration: 0.5 }}>
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="name" className="block text-foreground font-medium mb-2">
                   Name
                 </label>
                 <div className="relative">
                   <User
-                    className={`absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 transition-colors ${
-                      focusedField === "name" ? "text-black" : "text-gray-400"
-                    }`}
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 transition-colors ${focusedField === "name" ? "text-primary" : "text-muted-foreground"
+                      }`}
                   />
                   <input
                     type="text"
@@ -165,7 +163,7 @@ export default function ImprovedContactForm() {
                     onFocus={() => setFocusedField("name")}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition"
+                    className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
                     placeholder="Your name"
                   />
                 </div>
@@ -173,14 +171,13 @@ export default function ImprovedContactForm() {
 
               {/* Email Field */}
               <motion.div variants={itemVariants} transition={{ duration: 0.5 }}>
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="email" className="block text-foreground font-medium mb-2">
                   Email
                 </label>
                 <div className="relative">
                   <Mail
-                    className={`absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 transition-colors ${
-                      focusedField === "email" ? "text-black" : "text-gray-400"
-                    }`}
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 transition-colors ${focusedField === "email" ? "text-primary" : "text-muted-foreground"
+                      }`}
                   />
                   <input
                     type="email"
@@ -191,7 +188,7 @@ export default function ImprovedContactForm() {
                     onFocus={() => setFocusedField("email")}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition"
+                    className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -199,14 +196,13 @@ export default function ImprovedContactForm() {
 
               {/* Message Field */}
               <motion.div variants={itemVariants} transition={{ duration: 0.5 }}>
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="message" className="block text-foreground font-medium mb-2">
                   Message
                 </label>
                 <div className="relative">
                   <MessageSquare
-                    className={`absolute left-4 top-4 h-5 w-5 transition-colors ${
-                      focusedField === "message" ? "text-black" : "text-gray-400"
-                    }`}
+                    className={`absolute left-4 top-4 h-5 w-5 transition-colors ${focusedField === "message" ? "text-primary" : "text-muted-foreground"
+                      }`}
                   />
                   <textarea
                     id="message"
@@ -217,7 +213,7 @@ export default function ImprovedContactForm() {
                     onBlur={() => setFocusedField(null)}
                     required
                     rows={5}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-black outline-none transition resize-none"
+                    className="w-full pl-12 pr-4 py-3 bg-background border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -230,9 +226,8 @@ export default function ImprovedContactForm() {
                   disabled={isSubmitting}
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                  className={`w-full bg-black text-white font-semibold py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-2 ${
-                    isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:bg-gray-800"
-                  }`}
+                  className={`w-full bg-primary text-primary-foreground font-semibold py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-2 ${isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:bg-primary/90"
+                    }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -260,13 +255,13 @@ export default function ImprovedContactForm() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-8 text-center text-gray-600"
+            className="mt-8 text-center text-muted-foreground"
           >
             <p>
               Or email us directly at{" "}
               <a
                 href="mailto:support@agilecoder.in"
-                className="text-black font-medium hover:underline"
+                className="text-foreground font-medium hover:underline"
               >
                 support@agilecoder.in
               </a>

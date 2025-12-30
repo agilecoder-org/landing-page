@@ -61,11 +61,11 @@ export default function PostContentClient({ post }: PostContentClientProps) {
   }, [])
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
-  
+
   const handleShare = (platform: string) => {
     const text = encodeURIComponent(post.title)
     const url = encodeURIComponent(shareUrl)
-    
+
     const shareUrls: Record<string, string> = {
       twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
@@ -82,10 +82,10 @@ export default function PostContentClient({ post }: PostContentClientProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-black z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left"
         style={{ scaleX: scrollProgress / 100 }}
       />
 
@@ -98,7 +98,7 @@ export default function PostContentClient({ post }: PostContentClientProps) {
         >
           <a
             href="/tech-blog"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 group"
           >
             <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
             Back to all posts
@@ -118,7 +118,7 @@ export default function PostContentClient({ post }: PostContentClientProps) {
           </h1>
 
           {/* Meta Information */}
-          <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8 pb-8 border-b border-gray-200">
+          <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8 pb-8 border-b border-border">
             <span className="flex items-center gap-2">
               <Calendar className="h-5 w-5" />
               {new Date(post.date).toLocaleDateString("en-US", {
@@ -137,14 +137,14 @@ export default function PostContentClient({ post }: PostContentClientProps) {
               <Clock className="h-5 w-5" />
               {readingTime} min read
             </span>
-            
+
             {/* Share Button */}
             <div className="relative ml-auto">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowShareMenu(!showShareMenu)}
-                className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition"
+                className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition"
               >
                 <Share2 className="h-4 w-4" />
                 Share
@@ -155,7 +155,7 @@ export default function PostContentClient({ post }: PostContentClientProps) {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg p-2 min-w-[160px] z-10"
+                  className="absolute right-0 mt-2 bg-popover border border-border rounded-xl shadow-lg p-2 min-w-[160px] z-10"
                 >
                   <button
                     onClick={() => handleShare('twitter')}
@@ -204,17 +204,17 @@ export default function PostContentClient({ post }: PostContentClientProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="prose prose-lg max-w-none
-              prose-headings:font-bold prose-headings:text-black
+            className="prose prose-lg max-w-none dark:prose-invert
+              prose-headings:font-bold prose-headings:text-foreground
               prose-h1:text-4xl prose-h1:mb-6
               prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4
               prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3
-              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-black prose-a:font-medium prose-a:underline prose-a:decoration-2 prose-a:underline-offset-2
-              prose-strong:text-black prose-strong:font-semibold
-              prose-code:text-black prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
-              prose-pre:bg-gray-900 prose-pre:text-gray-100
-              prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:pl-6 prose-blockquote:italic
+              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
+              prose-a:text-primary prose-a:font-medium prose-a:underline prose-a:decoration-2 prose-a:underline-offset-2
+              prose-strong:text-foreground prose-strong:font-semibold
+              prose-code:text-foreground prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
+              prose-pre:bg-secondary prose-pre:text-secondary-foreground
+              prose-blockquote:border-l-4 prose-blockquote:border-foreground prose-blockquote:pl-6 prose-blockquote:italic
               prose-ul:list-disc prose-ul:ml-6
               prose-ol:list-decimal prose-ol:ml-6
               prose-li:mb-2
@@ -232,15 +232,15 @@ export default function PostContentClient({ post }: PostContentClientProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 p-8 bg-gray-50 rounded-2xl border border-gray-200"
+          className="mt-16 p-8 bg-card rounded-2xl border border-border"
         >
           <h3 className="text-2xl font-bold mb-4">Enjoyed this article?</h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-muted-foreground mb-6">
             Subscribe to our newsletter for more insights and tutorials on modern web development.
           </p>
           <a
             href="/#contact"
-            className="inline-block bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition font-medium"
+            className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition font-medium"
           >
             Get in Touch
           </a>

@@ -86,12 +86,12 @@ export default function ExploreSection() {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-gray-100 rounded-lg p-1">
+          <div className="inline-flex bg-muted rounded-lg p-1">
             <button
               onClick={() => setActiveTab('projects')}
               className={`px-8 py-3 rounded-lg font-semibold transition ${activeTab === 'projects'
-                ? 'bg-black text-white'
-                : 'text-gray-600 hover:text-black'
+                ? 'bg-primary text-primary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
                 }`}
             >
               Projects
@@ -99,8 +99,8 @@ export default function ExploreSection() {
             <button
               onClick={() => setActiveTab('packages')}
               className={`px-8 py-3 rounded-lg font-semibold transition ${activeTab === 'packages'
-                ? 'bg-black text-white'
-                : 'text-gray-600 hover:text-black'
+                ? 'bg-primary text-primary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
                 }`}
             >
               Packages & Tools
@@ -128,20 +128,20 @@ export default function ExploreSection() {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
-                  className="bg-white border border-gray-200 rounded-xl p-6 hover:border-black hover:shadow-lg transition"
+                  className="bg-card border border-border rounded-xl p-6 hover:border-primary hover:shadow-lg transition"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="text-black">{item.icon}</div>
-                    <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-black transition-colors" />
+                    <div className="text-foreground">{item.icon}</div>
+                    <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600 mb-4 h-12 line-clamp-2">{item.description}</p>
+                  <p className="text-muted-foreground mb-4 h-12 line-clamp-2">{item.description}</p>
 
                   <a
                     href={item.href}
                     target={item.href.startsWith('http') ? "_blank" : "_self"}
                     rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center text-sm font-semibold text-black hover:gap-2 transition-all mt-2"
+                    className="inline-flex items-center text-sm font-semibold text-foreground hover:gap-2 transition-all mt-2"
                   >
                     View Project <ArrowRight className="ml-1 h-3 w-3" />
                   </a>
@@ -161,30 +161,30 @@ export default function ExploreSection() {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
-                  className="bg-white border border-gray-200 rounded-xl p-6 hover:border-black hover:shadow-lg transition"
+                  className="bg-card border border-border rounded-xl p-6 hover:border-primary hover:shadow-lg transition"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="text-black">{item.icon}</div>
+                    <div className="text-foreground">{item.icon}</div>
                     {item.active ? (
-                      <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-black transition-colors" />
+                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     ) : (
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">Soon</span>
+                      <span className="text-xs bg-muted px-2 py-1 rounded text-muted-foreground">Soon</span>
                     )}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600 mb-4 h-12 line-clamp-2">{item.description}</p>
+                  <p className="text-muted-foreground mb-4 h-12 line-clamp-2">{item.description}</p>
 
                   {item.active ? (
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm font-semibold text-black hover:gap-2 transition-all mt-2"
+                      className="inline-flex items-center text-sm font-semibold text-foreground hover:gap-2 transition-all mt-2"
                     >
                       View Package <ArrowRight className="ml-1 h-3 w-3" />
                     </a>
                   ) : (
-                    <span className="text-sm text-gray-400 mt-2 block">In Development</span>
+                    <span className="text-sm text-muted-foreground mt-2 block">In Development</span>
                   )}
                 </motion.div>
               ))}

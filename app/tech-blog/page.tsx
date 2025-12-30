@@ -22,7 +22,7 @@ export default async function BlogPage() {
 
             {/* Pages / Topics Section */}
             <section>
-              <h2 className="text-2xl font-bold tracking-tight mb-6">Explore Topics</h2>
+              <h2 className="text-2xl font-bold tracking-tight mb-6 text-foreground">Explore Topics</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pages.map(page => (
                   <Link key={page.slug} href={`/tech-blog/${page.slug}`} className="block group border rounded-xl p-6 hover:shadow-lg transition-all bg-card">
@@ -34,7 +34,7 @@ export default async function BlogPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold tracking-tight mb-6">Recent Posts</h2>
+              <h2 className="text-2xl font-bold tracking-tight mb-6 text-foreground">Recent Posts</h2>
               <CategoryList posts={posts.slice(0, 10)} />
             </section>
           </div>

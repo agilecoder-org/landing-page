@@ -6,12 +6,12 @@ const TermsOfService = () => {
     <div className="max-w-3xl mx-auto px-5 py-10">
       <BackButton />
 
-      <h1 className="text-3xl font-bold mb-4">Terms and Conditions</h1>
-      <p className="text-sm text-gray-600 mb-8">
+      <h1 className="text-3xl font-bold mb-4 text-foreground">Terms and Conditions</h1>
+      <p className="text-sm text-muted-foreground mb-8">
         <strong>Effective Date:</strong> October 19, 2025
       </p>
 
-      <div className="prose prose-gray max-w-none">
+      <div className="prose prose-neutral dark:prose-invert max-w-none">
         <p>
           These Terms and Conditions ("Terms") govern your access to and use of our website. These Terms form a legally binding agreement between you and <strong>agilecoder.in</strong>. By accessing, browsing, registering for, or otherwise using the Platform, you accept and agree to be bound by these Terms in full. If you do not agree to these Terms, you must not access or use the Platform. Please read these Terms carefully and retain a copy for your records.
           This Terms & Conditions has been created with the help of the{' '}
@@ -19,7 +19,7 @@ const TermsOfService = () => {
             href="https://listwr.com/terms-and-conditions-generator"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
+            className="text-primary hover:underline"
           >
             Free Terms & Conditions Generator
           </a>.
@@ -64,7 +64,7 @@ const TermsOfService = () => {
         </p>
 
         <h2>7. Warranties and Disclaimers</h2>
-        <p className="uppercase font-semibold text-gray-700">
+        <p className="uppercase font-semibold text-foreground">
           The platform is provided on an “as is” and “as available” basis.
         </p>
 
@@ -113,7 +113,7 @@ const TermsOfService = () => {
           For questions or concerns, please contact: <strong>support@agilecoder.in</strong>.
         </p>
 
-        <p className="text-sm text-gray-500 mt-8">
+        <p className="text-sm text-muted-foreground mt-8">
           <strong>Last updated:</strong> October 19, 2025.
         </p>
       </div>

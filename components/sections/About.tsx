@@ -45,7 +45,7 @@ export default function ImprovedAbout() {
   } as const;
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -59,7 +59,7 @@ export default function ImprovedAbout() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               About The Lab
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               A digital playground for building, experimenting, and sharing the software engineering journey.
             </p>
           </motion.div>
@@ -78,10 +78,10 @@ export default function ImprovedAbout() {
                 variants={itemVariants}
                 transition={{ duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 rounded-xl p-6 text-center group hover:bg-black hover:text-white transition-colors duration-300"
+                className="bg-card rounded-xl p-6 text-center group hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
               >
                 <motion.div
-                  className="inline-block text-black group-hover:text-white mb-4 transition-colors duration-300"
+                  className="inline-block text-foreground group-hover:text-primary-foreground mb-4 transition-colors duration-300"
                   whileHover={{ rotate: 5, scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -90,7 +90,7 @@ export default function ImprovedAbout() {
                 <h3 className="font-bold text-lg mb-2">
                   {value.title}
                 </h3>
-                <p className="text-sm text-gray-600 group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-sm text-muted-foreground group-hover:text-primary-foreground/90 transition-colors duration-300">
                   {value.description}
                 </p>
               </motion.div>
@@ -105,8 +105,8 @@ export default function ImprovedAbout() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="mt-16 text-center"
           >
-            <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="bg-card rounded-2xl p-8 md:p-12">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 We believe in creating tools and solutions that empower developers and businesses to build better, faster, and smarter. Every line of code we write is driven by a commitment to quality, simplicity, and innovation.
               </p>
             </div>

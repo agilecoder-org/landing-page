@@ -17,19 +17,11 @@ export default function CategoryList({ posts }: CategoryListProps) {
                     className="group bg-card text-card-foreground rounded-lg border transition-all hover:shadow-md overflow-hidden flex flex-col md:flex-row gap-4 h-full"
                 >
                     <div className="w-full md:w-64 aspect-video md:aspect-[4/3] relative overflow-hidden bg-muted flex-shrink-0">
-                        {post.coverImage ? (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img
-                                src={post.coverImage}
-                                alt={post.title}
-                                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                            />
-                        ) : (
-                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-muted/50 to-muted text-muted-foreground/50">
-                                <ImageIcon className="w-10 h-10 mb-2 opacity-50" />
-                                <span className="text-xs font-medium uppercase tracking-wider opacity-60">AgileCoder</span>
-                            </div>
-                        )}
+                        <img
+                            src={post.coverImage || "/default-og.png"}
+                            alt={post.title}
+                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="flex-1 flex flex-col p-4 md:p-6 md:pl-0">

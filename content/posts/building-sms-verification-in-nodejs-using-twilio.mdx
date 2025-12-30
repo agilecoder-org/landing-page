@@ -3,7 +3,7 @@ title: "Building SMS Verification in Node.js using Twilio"
 excerpt: "Secure user accounts with Twilio's Verify API in Node.js! Learn to send SMS verification codes, validate them, and manage phone updates efficiently. A step-by-step guide to building robust verification for your app. 🚀"
 date: "2024-08-20"
 tags: ["NodeJS", "Twilio", "SMS Verification"]
-thumbnail: "/thumbnails/posts/send-sms-otp-node-express/thumbnail.png"
+coverImage: "/assets/send-sms-otp-node-express/thumbnail.png"
 ---
 
 Phone number verification is vital for securing user accounts and maintaining trustworthy user interactions. Twilio’s Verify API makes it straightforward to implement this in your Node.js application. In this post, I’ll walk you through a complete solution for SMS verification, covering sending codes, verifying them, and handling phone number updates.
@@ -46,13 +46,13 @@ export { twilioClient, twilioConfig };
 
 You can get all these Variables from your Twilio Dashboard. You can easily create a Twilio account. And then login to the account dashboard. 
 
-![Twilio Dashboard Screenshot](/thumbnails/posts/send-sms-otp-node-express/twilio-dashboard.png)
+![Twilio Dashboard Screenshot](/assets/send-sms-otp-node-express/twilio-dashboard.png)
 
 From this page, you can get your Account SID and Auth Token. For the Service SID you have to go to 
 
 `Explore Products -> User Authentication & Identity -> Verify -> Create New`
 
-![Twilio Services - Create New Pop Up](/thumbnails/posts/send-sms-otp-node-express/services-create-new.png)
+![Twilio Services - Create New Pop Up](/assets/send-sms-otp-node-express/services-create-new.png)
 
 You will get this popup, here enter a Friendly Name ( This will be displayed in the SMS or Other channels ). Then, make sure to enable the SMS feature from here. 
 

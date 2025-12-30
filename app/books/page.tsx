@@ -113,7 +113,7 @@ export default function BooksPage() {
                 </div>
 
                 {/* Newsletter Section - Separated Background */}
-                <section className="bg-slate-50 dark:bg-neutral-900 py-20 border-t border-b border-border/50">
+                <section className="bg-muted/30 py-20 border-t border-b border-border">
                     <div className="container mx-auto px-4">
                         <div className="max-w-xl mx-auto text-center">
                             <h2 className="text-3xl font-bold mb-4 tracking-tight">Get Discount Codes</h2>
@@ -130,7 +130,7 @@ export default function BooksPage() {
                                 />
                                 <button
                                     type="submit"
-                                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black/90 h-11 px-6 shadow-sm"
+                                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 shadow-sm"
                                 >
                                     Subscribe
                                 </button>

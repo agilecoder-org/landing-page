@@ -68,7 +68,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
                   <motion.img
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.4 }}
-                    src={post.coverImage}
+                    src={post.coverImage || "/default-og.png"}
                     alt={post.title}
                     className="w-full h-full object-cover"
                   />

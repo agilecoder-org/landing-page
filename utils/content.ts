@@ -33,12 +33,24 @@ export function getPostBySlug(slug: string): PostData | null {
         // In the new flat structure, we might want to ensure the date is present
         // or default it to file creation time if needed, but strict typings suggest it's required.
 
+        let coverImage = data.coverImage
+        if (!coverImage) {
+            const extensions = ['jpg', 'png', 'webp', 'jpeg']
+            for (const ext of extensions) {
+                const assetPath = join(process.cwd(), 'public', 'assets', `${realSlug}.${ext}`)
+                if (fs.existsSync(assetPath)) {
+                    coverImage = `/assets/${realSlug}.${ext}`
+                    break
+                }
+            }
+        }
+
         return {
             slug: realSlug,
             title: data.title,
             date: data.date,
             content: content,
-            coverImage: data.coverImage,
+            coverImage: coverImage,
             author: data.author,
             excerpt: data.excerpt,
             tags: data.tags,

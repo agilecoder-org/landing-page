@@ -3,7 +3,7 @@ title: "Secure JWT Token Storage and Best Practices for Authentication in NodeJS
 excerpt: "JWTs enable stateless authentication, but securing them is critical. Avoid storing tokens in local storage due to XSS risks. Instead, use HttpOnly, Secure cookies to prevent access via JavaScript and limit CSRF attacks. Pair short-lived access tokens with refresh tokens for enhanced security."
 date: "2024-01-20"
 tags: ["NodeJS", "JWT Authentication", "HTTP Only Cookies"]
-thumbnail: "/thumbnails/posts/secure-storage-for-jwt.png"
+coverImage: "/assets/secure-storage-for-jwt.png"
 ---
 
 JWT (JSON Web Tokens) have become a widely adopted solution for handling authentication in modern web applications. They provide a stateless and scalable method for managing user sessions, but securing these tokens effectively is crucial to prevent security vulnerabilities such as XSS (Cross-Site Scripting) and CSRF (Cross-Site Request Forgery) attacks. In this guide, we'll explore best practices for securing JWT tokens and implementing a secure authentication flow in NodeJS.

@@ -40,7 +40,7 @@ export default async function BlogPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:sticky lg:top-10 h-fit">
+          <div className="lg:sticky lg:top-36 h-fit">
             <BlogSidebar categories={pages.map(p => ({ title: p.title, slug: p.slug }))} />
           </div>
         </div>

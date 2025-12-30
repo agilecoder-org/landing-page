@@ -73,7 +73,7 @@ export default async function BlogEntry({ params }: Params) {
 
     return (
         <div className="min-h-screen bg-background">
-            <div className="min-h-screen bg-background pt-24">
+            <div className="min-h-screen bg-background">
                 <div className="container max-w-7xl mx-auto px-4 py-8 lg:py-12">
                     <div className="grid grid-cols-1 gap-10 xl:grid-cols-[1fr_300px]">
                         {/* Main Content */}
@@ -129,7 +129,7 @@ export default async function BlogEntry({ params }: Params) {
 
                         {/* Sidebar */}
                         <aside className="hidden xl:block">
-                            <div className="sticky top-24 space-y-8">
+                            <div className="sticky top-36 space-y-8">
                                 <TableOfContents headings={headings} />
                             </div>
                         </aside>

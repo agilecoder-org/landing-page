@@ -9,15 +9,15 @@ export default function Breadcrumbs({ slug }: BreadcrumbsProps) {
     return (
         <nav className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 overflow-x-auto whitespace-nowrap pb-2">
             <Link
-                href="/blog"
+                href="/tech-blog"
                 className="flex items-center hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             >
                 <Home className="w-4 h-4 mr-1" />
-                Blog
+                Tech Blog
             </Link>
 
             {slug.map((segment, index) => {
-                const path = `/blog/${slug.slice(0, index + 1).join("/")}`
+                const path = `/tech-blog/${slug.slice(0, index + 1).join("/")}`
                 const isLast = index === slug.length - 1
 
                 return (

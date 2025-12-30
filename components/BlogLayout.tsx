@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer"
 
-import { getAllPosts } from "@/utils/getPosts"
+import { getAllPosts } from "@/utils/content"
 import { SearchDialog } from "@/components/SearchDialog"
 import { SearchButton } from "@/components/SearchButton"
 
@@ -9,7 +9,7 @@ interface BlogLayoutProps {
 }
 
 export default function BlogLayout({ children }: BlogLayoutProps) {
-    const posts = getAllPosts(["title", "slug", "excerpt"])
+    const posts = getAllPosts()
 
     return (
         <div className="flex min-h-screen flex-col bg-background">

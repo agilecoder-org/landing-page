@@ -31,7 +31,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
   } as const;
 
   return (
-    <section id="blog" className="py-20 bg-gray-50">
+    <section id="tech-blog" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
               whileHover={{ y: -8 }}
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
-              <a href={`/blog/${post.slug}`} className="block">
+              <a href={`/tech-blog/${post.slug}`} className="block">
                 {/* Image Container with Overlay */}
                 <div className="relative h-48 overflow-hidden bg-gray-200">
                   <motion.img
@@ -124,7 +124,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
             className="text-center mt-12"
           >
             <motion.a
-              href="/blog"
+              href="/tech-blog"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors"

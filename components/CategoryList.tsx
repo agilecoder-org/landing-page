@@ -37,7 +37,7 @@ export default function CategoryList({ posts }: CategoryListProps) {
                             )}
                         </div>
 
-                        <Link href={`/blog/${post.slug}`} className="mb-3 block">
+                        <Link href={`/tech-blog/${post.slug}`} className="mb-3 block">
                             <h2 className="text-2xl font-bold tracking-tight mb-2 group-hover:text-primary transition-colors">
                                 {post.title}
                             </h2>
@@ -53,7 +53,7 @@ export default function CategoryList({ posts }: CategoryListProps) {
                                 </div>
                             )}
                             <Link
-                                href={`/blog/${post.slug}`}
+                                href={`/tech-blog/${post.slug}`}
                                 className="text-sm font-medium text-primary hover:underline whitespace-nowrap ml-auto"
                             >
                                 Read article

@@ -40,7 +40,7 @@ export function CategoryGrid() {
             {categories.map((category) => (
                 <Link
                     key={category.slug}
-                    href={`/blog/${category.slug}`}
+                    href={`/tech-blog/${category.slug}`}
                     className="group relative overflow-hidden rounded-xl border bg-background p-6 transition-all hover:bg-muted"
                 >
                     <div className="flex flex-col justify-between h-full space-y-4">

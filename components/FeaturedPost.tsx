@@ -35,7 +35,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                     </div>
 
                     <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-                        <Link href={`/blog/${post.slug}`} className="hover:underline">
+                        <Link href={`/tech-blog/${post.slug}`} className="hover:underline">
                             {post.title}
                         </Link>
                     </h1>
@@ -46,7 +46,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
 
                     <div className="pt-4">
                         <Link
-                            href={`/blog/${post.slug}`}
+                            href={`/tech-blog/${post.slug}`}
                             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-200"
                         >
                             Read Article

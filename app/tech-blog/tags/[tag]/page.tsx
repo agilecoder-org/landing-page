@@ -1,4 +1,4 @@
-import { getAllTags, getPostsByTag, getAllCategories } from "@/utils/getPosts"
+import { getAllTags, getPostsByTag, getAllPages } from "@/utils/content"
 import CategoryList from "@/components/CategoryList"
 import { BlogSidebar } from "@/components/BlogSidebar"
 import { notFound } from "next/navigation"
@@ -22,19 +22,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function TagPage({ params }: Params) {
-    const posts = getPostsByTag(params.tag, [
-        "title",
-        "date",
-        "slug",
-        "excerpt",
-        "coverImage",
-        "tags",
-        "readingTime"
-    ])
+    const posts = getPostsByTag(params.tag.replace(/-/g, " "))
 
     if (!posts.length) {
         return notFound()
     }
+
+    const pages = getAllPages()
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -48,7 +42,7 @@ export default async function TagPage({ params }: Params) {
                         {params.tag.replace(/-/g, " ")}
                     </h1>
                     <p className="text-xl text-muted-foreground">
-                        Posts tagged with {params.tag}
+                        Posts tagged with {params.tag.replace(/-/g, " ")}
                     </p>
                 </div>
             </div>
@@ -58,7 +52,7 @@ export default async function TagPage({ params }: Params) {
                     <CategoryList posts={posts} />
                 </div>
                 <div className="lg:sticky lg:top-10 h-fit">
-                    <BlogSidebar categories={getAllCategories()} />
+                    <BlogSidebar categories={pages.map(p => ({ title: p.title, slug: p.slug }))} />
                 </div>
             </div>
         </div>
@@ -68,6 +62,6 @@ export default async function TagPage({ params }: Params) {
 export async function generateStaticParams() {
     const tags = getAllTags()
     return tags.map(([tag]) => ({
-        tag: tag,
+        tag: tag.replace(/ /g, "-"),
     }))
 }

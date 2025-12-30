@@ -1,6 +1,6 @@
 ---
 title: 'Transforming Legacy Systems: Challenges, Opportunities'
-excerpt: "Modernizing legacy systems isn't just about technology—it's about unlocking agility, innovation, and future-proofing your business. In this blog, we explore the core challenges of transformation and why businesses that modernize stand to gain a decisive competitive edge."
+excerpt: "Modernizing legacy systems isn't just about technology—it's about unlocking agility, innovation, and future-proofing your business. In this tech blog, we explore the core challenges of transformation and why businesses that modernize stand to gain a decisive competitive edge."
 date: '2025-05-11'
 author: 'Smruti R Badatya'
 coverImage: '/assets/transforming-legacy-systems-challenges-and-opportunities-for-modern-businesses.jpg'

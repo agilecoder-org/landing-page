@@ -18,10 +18,10 @@ const NotFound = () => {
         </Link>
 
         <Link
-          href="/blog"
+          href="/tech-blog"
           className="px-5 py-2.5 border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors duration-200"
         >
-          Visit Blog
+          Visit Tech Blog
         </Link>
       </div>
     </div>

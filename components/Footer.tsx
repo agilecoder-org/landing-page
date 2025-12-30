@@ -7,7 +7,7 @@ export default function ImprovedFooter() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/#projects" },
-    { label: "Blog", href: "/blog" },
+    { label: "Tech Blog", href: "/tech-blog" },
     { label: "Books", href: "/books" },
   ];
 

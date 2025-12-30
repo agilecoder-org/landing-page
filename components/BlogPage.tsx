@@ -57,7 +57,7 @@ export default async function BlogPageClient({ posts }: BlogPageClientProps) {
           className="mb-12"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-black mb-4">
-            All Blog Posts
+            All Tech Blog Posts
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl">
             Insights, tutorials, and best practices from our development journey
@@ -120,7 +120,7 @@ export default async function BlogPageClient({ posts }: BlogPageClientProps) {
           </motion.div>
         </motion.div>
 
-        {/* Blog Grid */}
+        {/* Tech Blog Grid */}
         {filteredPosts.length > 0 ? (
           <motion.div
             variants={containerVariants}
@@ -136,7 +136,7 @@ export default async function BlogPageClient({ posts }: BlogPageClientProps) {
                 whileHover={{ y: -8 }}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
-                <a href={`/blog/${post.slug}`} className="block">
+                <a href={`/tech-blog/${post.slug}`} className="block">
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden bg-gray-200">
                     <motion.img

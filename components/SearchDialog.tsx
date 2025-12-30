@@ -57,7 +57,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
                                 <Command.Item
                                     key={post.slug}
                                     onSelect={() => {
-                                        runCommand(() => router.push(`/blog/${post.slug}`))
+                                        runCommand(() => router.push(`/tech-blog/${post.slug}`))
                                     }}
                                     className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
                                 >

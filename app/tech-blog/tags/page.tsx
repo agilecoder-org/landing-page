@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getAllTags } from "@/utils/getPosts"
+import { getAllTags } from "@/utils/content"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -30,11 +30,11 @@ export default async function TagsPage() {
             <hr className="my-8" />
             <div className="flex flex-wrap gap-4">
                 {tags.map(([tag, count]) => {
-                    const slug = tag.toLowerCase().replace(/ /g, "-")
+                    const slug = tag.replace(/ /g, "-")
                     return (
                         <Link
                             key={tag}
-                            href={`/blog/tags/${slug}`}
+                            href={`/tech-blog/tags/${slug}`}
                             className="group flex items-center justify-between rounded-md border bg-card px-4 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
                         >
                             <div className="flex flex-col">

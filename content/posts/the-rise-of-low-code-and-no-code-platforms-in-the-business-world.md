@@ -1,6 +1,6 @@
 ---
 title: 'The Rise of Low-Code and No-Code Platforms in the Business World'
-excerpt: "Creating a developer-friendly business isn't just about improving workflows—it's about fostering an environment that empowers developers to be their best. In this blog, we explore why prioritizing developer experience can drive productivity, reduce turnover, and ultimately lead to better products and faster time-to-market."
+excerpt: "Creating a developer-friendly business isn't just about improving workflows—it's about fostering an environment that empowers developers to be their best. In this tech blog, we explore why prioritizing developer experience can drive productivity, reduce turnover, and ultimately lead to better products and faster time-to-market."
 date: '2025-05-11'
 author: 'Smruti R Badatya'
 coverImage: '/assets/the-rise-of-low-code-and-no-code-platforms-in-the-business-world.jpg'

@@ -1,12 +1,12 @@
 ---
 title: 'Building a Developer Friendly Business: Why Should You Care?'
-excerpt: "Creating a developer-friendly business isn't just about improving workflows—it's about fostering an environment that empowers developers to be their best. In this blog, we explore why prioritizing developer experience can drive productivity, reduce turnover, and ultimately lead to better products and faster time-to-market."
+excerpt: "Creating a developer-friendly business isn't just about improving workflows—it's about fostering an environment that empowers developers to be their best. In this tech blog, we explore why prioritizing developer experience can drive productivity, reduce turnover, and ultimately lead to better products and faster time-to-market."
 date: '2025-05-11'
 author: 'Smruti R Badatya'
 coverImage: '/assets/building-a-developer-friendly-business-why-should-you-care.jpg'
 ---
 
-In today’s fast-paced, tech-driven world, building a developer-friendly business is more than just a trend—it’s a strategic move that can lead to better software, faster delivery, and a more engaged development team. In this blog, we’ll dive into why prioritizing developer experience (DX) is essential for your company’s growth and success.
+In today’s fast-paced, tech-driven world, building a developer-friendly business is more than just a trend—it’s a strategic move that can lead to better software, faster delivery, and a more engaged development team. In this tech blog, we’ll dive into why prioritizing developer experience (DX) is essential for your company’s growth and success.
 
 ### What Does "Developer-Friendly" Mean?
 A developer-friendly business is one that values the experience, tools, and environment of its software developers. From the tools they use to the culture of the organization, everything should be designed to enhance the productivity and satisfaction of your development team. When businesses focus on creating a positive developer experience, they create an environment that nurtures creativity, efficiency, and long-term employee retention.

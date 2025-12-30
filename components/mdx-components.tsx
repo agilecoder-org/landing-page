@@ -3,14 +3,17 @@ import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { cn } from "@/lib/utils"
+import { Pre } from "@/components/Pre"
 
 const components = {
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h1
-            className={cn(
-                "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
-                className
-            )}
+            className={
+                cn(
+                    "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
+                    className
+                )
+            }
             {...props}
         />
     ),
@@ -104,19 +107,11 @@ const components = {
             {...props}
         />
     ),
-    pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-        <pre
-            className={cn(
-                "mb-4 mt-6 overflow-x-auto rounded-xl border bg-muted/50 py-4 px-2 not-prose text-sm",
-                className
-            )}
-            {...props}
-        />
-    ),
+    pre: Pre,
     code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <code
             className={cn(
-                "relative rounded bg-muted/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-primary",
+                "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-primary",
                 className
             )}
             {...props}

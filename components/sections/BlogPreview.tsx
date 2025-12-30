@@ -60,7 +60,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
               key={post.slug}
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              className="group bg-card border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <a href={`/tech-blog/${post.slug}`} className="block">
                 {/* Image Container with Overlay */}

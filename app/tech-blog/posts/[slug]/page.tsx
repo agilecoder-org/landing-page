@@ -8,6 +8,8 @@ import { ArrowLeft, Clock, Calendar, User } from "lucide-react"
 import { getHeadings } from "@/utils/getHeadings"
 import { TableOfContents } from "@/components/TableOfContents"
 import { Tags } from "@/components/Tags"
+import { ShareButton } from "@/components/ShareButton"
+import { SocialsBanner } from "@/components/SocialsBanner"
 
 interface Params {
     params: {
@@ -101,6 +103,9 @@ export default async function BlogEntry({ params }: Params) {
                                     <Clock className="h-4 w-4" />
                                     {post.readingTime || Math.ceil(post.content.split(/\s+/).length / 200)} min read
                                 </div>
+                                <div className="ml-auto">
+                                    <ShareButton title={post.title} />
+                                </div>
                             </div>
 
                             {post.tags && (
@@ -125,6 +130,8 @@ export default async function BlogEntry({ params }: Params) {
                             </div>
 
                             <MDX code={post.content} />
+
+                            <SocialsBanner />
                         </article>
 
                         {/* Sidebar */}

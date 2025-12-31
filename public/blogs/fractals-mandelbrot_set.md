@@ -69,7 +69,7 @@ function draw() {
 
 2. **Fractal Nature:** The Mandelbrot Set is a classic example of a fractal, a mathematical object that exhibits self-similarity and complexity at all levels of magnification. This means that as you zoom into any part of the set, you encounter smaller copies of the overall pattern.
 
-3. **Iterative Process:** The Mandelbrot Set is defined by an iterative process in the complex plane. For each point \( c \) in the complex plane, the iteration \( z_{n+1} = z_n^2 + c \) is repeated with \( z_0 = 0 \) to determine if the sequence of \( z_n \) remains bounded or escapes to infinity.
+3. **Iterative Process:** The Mandelbrot Set is defined by an iterative process in the complex plane. For each point \( c \) in the complex plane, the iteration \( z_&#123;n+1&#125; = z_n^2 + c \) is repeated with \( z_0 = 0 \) to determine if the sequence of \( z_n \) remains bounded or escapes to infinity.
 
 4. **Infinite Complexity:** The boundary of the Mandelbrot Set, known as the "Mandelbrot boundary" or "seahorse valley," contains infinitely intricate structures, such as filaments and seahorse-like shapes. These patterns are a key feature of the set's mesmerizing complexity.
 

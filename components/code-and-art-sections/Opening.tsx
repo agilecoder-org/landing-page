@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef } from 'react';
 import pendulum from "@/sketches/pendulum"
-import { FaAngleDoubleDown } from 'react-icons/fa';
+import { ChevronsDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 const P5Wrapper = dynamic(() => import('@/components/P5Wrapper'), {
@@ -30,7 +30,7 @@ const Opening: React.FC = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce text-muted-foreground">
-        <FaAngleDoubleDown size={24} />
+        <ChevronsDown size={24} />
       </div>
     </div>
   );

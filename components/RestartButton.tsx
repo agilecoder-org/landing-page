@@ -1,5 +1,6 @@
+"use client"
+import { RotateCcw } from "lucide-react";
 import React from 'react';
-import { IoReloadCircleSharp } from "react-icons/io5";
 
 interface RestartButtonProps {
   onClick: () => void;
@@ -7,9 +8,13 @@ interface RestartButtonProps {
 
 const RestartButton: React.FC<RestartButtonProps> = ({ onClick }) => {
   return (
-    <div className="mt-5 flex justify-end w-full">
-      <IoReloadCircleSharp onClick={onClick} className="text-3xl cursor-pointer" />
-    </div>
+    <button
+      onClick={onClick}
+      className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm group"
+      aria-label="Restart Animation"
+    >
+      <RotateCcw className="w-6 h-6 text-white/70 group-hover:text-white group-hover:-rotate-90 transition-all duration-500" />
+    </button>
   );
 };
 

@@ -20,7 +20,7 @@ export default function CodeAndArtPage() {
                 <Opening />
             </section>
 
-            <section className="w-full relative py-20 overflow-hidden">
+            <section className="w-full relative py-10 md:py-20 overflow-hidden">
                 <CarAnimation />
             </section>
 
@@ -36,11 +36,11 @@ export default function CodeAndArtPage() {
                 <Simulations />
             </section>
 
-            <section className="h-screen my-20 w-full overflow-hidden relative">
+            <section className="h-screen md:my-20 w-full overflow-hidden relative">
                 <Visualizations />
             </section>
 
-            <section className="h-screen my-20 w-full overflow-hidden relative">
+            <section className="h-screen md:my-20 w-full overflow-hidden relative">
                 <Art />
             </section>
 

@@ -11,7 +11,7 @@ const Art: React.FC = () => {
       sketch={art}
       categoryLink="/code-and-art/blog"
       buttonText="Explore Gallery"
-      titleClassName="text-6xl md:text-9xl"
+      titleClassName="text-5xl md:text-9xl"
     />
   );
 };

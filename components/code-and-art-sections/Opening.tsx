@@ -25,7 +25,7 @@ const Opening: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-9xl font-sans font-bold tracking-tighter text-foreground mb-6"
+          className="text-4xl md:text-7xl lg:text-9xl font-sans font-bold tracking-tighter text-foreground mb-6"
         >
           Artful <span className="text-primary">Coding</span>
         </motion.h1>

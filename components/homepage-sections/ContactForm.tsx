@@ -119,8 +119,8 @@ export default function ImprovedContactForm() {
               >
                 <div
                   className={`p-4 rounded-xl flex items-center gap-3 ${formStatus.success
-                      ? "bg-green-500/10 text-green-500 border border-green-500/20"
-                      : "bg-destructive/10 text-destructive border border-destructive/20"
+                    ? "bg-green-500/10 text-green-500 border border-green-500/20"
+                    : "bg-destructive/10 text-destructive border border-destructive/20"
                     }`}
                 >
                   {formStatus.success ? (
@@ -141,7 +141,7 @@ export default function ImprovedContactForm() {
             whileInView="visible"
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="bg-card rounded-2xl shadow-lg p-8 md:p-10"
+            className="bg-card rounded-2xl shadow-lg p-2 md:p-10"
           >
             <div className="space-y-6">
               {/* Name Field */}

@@ -27,7 +27,7 @@ const SketchSection: React.FC<SketchSectionProps> = ({
     sketch,
     categoryLink,
     buttonText = "Explore Full",
-    titleClassName = "text-6xl md:text-8xl",
+    titleClassName = "text-5xl md:text-8xl",
 }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [restart, setRestart] = useState<boolean>(false);

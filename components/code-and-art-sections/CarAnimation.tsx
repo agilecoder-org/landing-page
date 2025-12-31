@@ -11,7 +11,7 @@ const CarAnimation: React.FC = () => {
   const carRef = useRef<HTMLDivElement | null>(null);
   return (
     <div>
-      <div className="ml-[-20px] w-[100vw]" id="car-animation" ref={carRef}>
+      <div className="w-full relative overflow-hidden" id="car-animation" ref={carRef}>
         <P5Wrapper setup={carSketch.setup} draw={carSketch.draw} />
       </div>
     </div>

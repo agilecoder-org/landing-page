@@ -1,48 +1,55 @@
-"use client"
-let carX = 0; // Initial horizontal position of the car
-let carY; // Vertical position of the car (constant)
-
 const setup = (p, canvasParentRef) => {
   if (typeof window === 'undefined') return;
   const canvas = p.createCanvas(p.windowWidth, 100);
   canvas.parent(canvasParentRef);
-  carY = p.height - 50; // Set the car Y position at the bottom of the canvas
+
+  p.carY = p.height - 50;
+  p.carX = 0;
 };
 
 const draw = (p) => {
-  p.clear(); // Clear the canvas to prevent drawing over previous frames
+  p.clear();
 
   // Calculate the car's horizontal position based on the scroll position
   if (typeof window !== "undefined") {
-    // Calculate the car's horizontal position based on the scroll position
     const scrollPosition = p.map(window.scrollY, 0, p.windowHeight, 0, p.width);
-    carX = scrollPosition; // Set carX position relative to scroll
+    p.carX = scrollPosition;
   }
 
-  // Draw the ground
-  p.fill(150); // Gray shade for the ground
-  p.rect(0, carY, p.width, 50); // Ground rectangle
+  // Draw the ground road
+  p.fill(30, 41, 59); // Slate 800
+  p.rect(0, p.carY, p.width, 50);
+
+  // Dashed lane marker
+  p.stroke(255);
+  p.strokeWeight(2);
+  for (let i = 0; i < p.width; i += 40) {
+    p.line(i, p.carY + 25, i + 20, p.carY + 25);
+  }
+  p.noStroke();
 
   // Draw the car
-  drawCar(p, carX, carY - 10); // Adjust car Y position to be above the ground
+  drawCar(p, p.carX, p.carY - 10);
 };
 
 const drawCar = (p, x, y) => {
   // Draw the car body
-  p.fill(100); // Darker gray shade for the car body
-  p.rect(x, y - 20, 100, 20); // Car body
-  p.rect(x + 20, y - 40, 60, 20); // Car roof
+  p.fill(100, 149, 237); // Primary Blue
+  p.rect(x, y - 20, 100, 20, 5); // Car body
+
+  p.fill(148, 163, 184); // Slate 400
+  p.rect(x + 20, y - 40, 60, 20, 5, 5, 0, 0); // Car roof
 
   // Draw the car wheels
-  p.fill(50); // Even darker gray for the wheels
+  p.fill(2, 6, 23); // Slate 950 (Black-ish)
   p.ellipse(x + 20, y, 20, 20); // Left wheel
   p.ellipse(x + 80, y, 20, 20); // Right wheel
-};
 
-// Resize the canvas when the window is resized
-// const windowResized = (p) => {
-//   p.resizeCanvas(p.windowWidth, 100);
-// };
+  // Wheel hubcaps
+  p.fill(226, 232, 240); // Slate 200
+  p.ellipse(x + 20, y, 8, 8);
+  p.ellipse(x + 80, y, 8, 8);
+};
 
 const sketch = {
   setup, draw

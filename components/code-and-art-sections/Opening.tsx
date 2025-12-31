@@ -16,15 +16,15 @@ const Opening: React.FC = () => {
         <P5Wrapper setup={pendulum.setup} draw={pendulum.draw} />
       </div>
       <div className="flex flex-col items-center justify-center h-[calc(100vh-200px)]">
-        <h1 className="text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[5rem] font-fira font-semibold sm:text-center">
+        <h1 className="text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[5rem] font-sans font-bold tracking-tight sm:text-center text-foreground">
           Let&apos;s look at the creative side of programming!
         </h1>
-        <p className="text-xl mt-5 bg-black bg-opacity-10 text-black px-5 py-2">
+        <p className="text-xl mt-5 bg-muted text-muted-foreground px-5 py-2 rounded-md border border-border">
           Programming is not just building websites and apps!
         </p>
 
-        <div className="mt-10 font-fira flex flex-col justify-center items-center">
-          <p>Scroll Down</p>
+        <div className="mt-10 font-sans flex flex-col justify-center items-center text-muted-foreground">
+          <p className="font-medium animate-pulse">Scroll Down</p>
           <FaAngleDoubleDown className="mt-5 animate-bounce" />
         </div>
       </div>

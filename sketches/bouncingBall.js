@@ -1,30 +1,25 @@
-"use client"
-let ball;
-let gravity = 0.2;
-let damping = 1;
-
 class Ball {
   constructor(x, y, radius) {
     this.x = x;
     this.y = y;
     this.radius = radius;
-    this.velocityY = 0; // Initial vertical velocity
+    this.velocityY = 0;
   }
 
   update(p5) {
-    this.velocityY += gravity; // Apply gravity
-    this.y += this.velocityY;   // Update position
+    this.velocityY += p5.gravity;
+    this.y += this.velocityY;
 
-    // Check for collision with the ground
     if (this.y + this.radius >= p5.height) {
-      this.y = p5.height - this.radius; // Reset position to ground level
-      this.velocityY *= -damping; // Reverse velocity and apply damping
+      this.y = p5.height - this.radius;
+      this.velocityY *= -p5.damping;
     }
   }
 
   show(p5) {
-    p5.fill(127);
-    p5.ellipse(this.x, this.y, this.radius * 2, this.radius * 2); // Draw the ball
+    p5.fill(100, 149, 237); // Primary Blue
+    p5.noStroke();
+    p5.ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
   }
 }
 
@@ -35,18 +30,22 @@ const setup = (p5, canvasParentRef) => {
   } else {
     p5.createCanvas(500, 500).parent(canvasParentRef);
   }
-  ball = new Ball(p5.width / 2, 50, 20); // Create a ball
+
+  // Instance variables
+  p5.gravity = 0.2;
+  p5.damping = 0.8; // Reduce damping so it doesn't bounce forever
+  p5.ball = new Ball(p5.width / 2, 50, 20);
 }
 
 const draw = (p5) => {
-  p5.background(255); // Clear the canvas
-  ball.update(p5); // Update ball position
-  ball.show(p5); // Draw the ball
+  p5.background(3, 7, 18); // Dark BG
+  p5.ball.update(p5);
+  p5.ball.show(p5);
 
   // Draw the ground line
-  p5.stroke(0);
+  p5.stroke(148, 163, 184); // Slate 400
   p5.strokeWeight(2);
-  p5.line(0, p5.height - 1, p5.width, p5.height - 1); // Ground line
+  p5.line(0, p5.height - 1, p5.width, p5.height - 1);
 }
 
 const sketch = {

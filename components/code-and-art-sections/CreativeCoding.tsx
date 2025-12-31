@@ -17,19 +17,19 @@ const CreativeCoding: React.FC = () => {
 
   return (
     <div className="p-0 sm:p-3 md:p-10 py-20 flex flex-col items-center">
-      <h2 className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-fira font-semibold text-center">
+      <h2 className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-sans font-bold tracking-tight text-center text-foreground">
         What is <br /> Creative Coding?
       </h2>
-      <p className="text-xl mt-5 w-fit text-center bg-black bg-opacity-10 text-black px-5 py-2">
+      <p className="text-xl mt-5 w-fit text-center bg-muted text-muted-foreground px-5 py-2 rounded-md border border-border">
         An approach to programming that emphasizes creativity and artistry.
       </p>
 
       <div className="w-full flex justify-center mt-20">
         <div className="grid md:grid-cols-2 w-full text-lg max-w-[900px] gap-10">
           {items.map((item) => (
-            <div key={item.id} className="bg-black bg-opacity-5 p-5">
-              <h3 className="font-fira text-xl font-semibold">{item.name}</h3>
-              <p className="mt-3 text-gray-400">{item.description}</p>
+            <div key={item.id} className="bg-card text-card-foreground p-5 rounded-lg border border-border hover:shadow-lg transition-shadow">
+              <h3 className="font-sans text-xl font-semibold mb-2">{item.name}</h3>
+              <p className="mt-3 text-muted-foreground">{item.description}</p>
             </div>
           ))}
         </div>

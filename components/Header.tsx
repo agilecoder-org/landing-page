@@ -7,6 +7,7 @@ export default function Header() {
 
   const links = [
     { name: "Home", url: "/" },
+    { name: "Code & Art", url: "/code-and-art" },
     { name: "Tech Blog", url: "/tech-blog" },
     { name: "Books", url: "/books" }
   ];

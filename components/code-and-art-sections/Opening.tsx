@@ -9,24 +9,28 @@ const P5Wrapper = dynamic(() => import('@/components/P5Wrapper'), {
 });
 
 const Opening: React.FC = () => {
-  const pendulumRef = useRef<HTMLDivElement | null>(null); // Define ref type
+  const pendulumRef = useRef<HTMLDivElement | null>(null);
+
   return (
-    <div className="sm:p-10">
-      <div className="absolute bg-opacity-0 top-[92px] left-1/2 transform -translate-x-1/2" ref={pendulumRef} id="pendulum">
+    <div className="relative h-full w-full flex items-center justify-center bg-background overflow-hidden">
+      {/* Background Sketch */}
+      <div className="absolute inset-0 z-0 opacity-40" ref={pendulumRef}>
         <P5Wrapper setup={pendulum.setup} draw={pendulum.draw} />
       </div>
-      <div className="flex flex-col items-center justify-center h-[calc(100vh-200px)]">
-        <h1 className="text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[5rem] font-sans font-bold tracking-tight sm:text-center text-foreground">
-          Let&apos;s look at the creative side of programming!
-        </h1>
-        <p className="text-xl mt-5 bg-muted text-muted-foreground px-5 py-2 rounded-md border border-border">
-          Programming is not just building websites and apps!
-        </p>
 
-        <div className="mt-10 font-sans flex flex-col justify-center items-center text-muted-foreground">
-          <p className="font-medium animate-pulse">Scroll Down</p>
-          <FaAngleDoubleDown className="mt-5 animate-bounce" />
-        </div>
+      {/* Hero Content */}
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-7xl lg:text-9xl font-sans font-bold tracking-tighter text-foreground mb-6">
+          Artful <span className="text-primary">Coding</span>
+        </h1>
+        <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
+          Where logic meets imagination in the digital realm.
+        </p>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce text-muted-foreground">
+        <FaAngleDoubleDown size={24} />
       </div>
     </div>
   );

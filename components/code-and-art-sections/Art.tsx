@@ -4,11 +4,11 @@ import art from '@/sketches/art';
 import RestartButton from '@/components/RestartButton';
 import useIntersection from '@/hooks/useIntersection';
 import dynamic from 'next/dynamic';
+import { Button } from '@/components/ui/button';
+
 const P5Wrapper = dynamic(() => import('@/components/P5Wrapper'), {
   ssr: false
 });
-
-import { Button } from '@/components/ui/button';
 
 const Art: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,43 +30,42 @@ const Art: React.FC = () => {
     setTimeout(() => setRestart(false), 100);
   };
 
-  const points: string[] = [
-    "Code empowers artists to design systems that create infinite variations, where each run of the program generates a new, unique piece of art.",
-    "Everyday objects and scenes become extraordinary through an artistic lens, showing the beauty in the ordinary.",
-    "Art often blends technical precision with free-form imagination, where coding, algorithms, and creativity intersect.",
-    "Just like nature, art evolves, with each new generation pushing boundaries, experimenting, and redefining what's possible."
-  ];
-
   useEffect(() => {
     if (typeof window === 'undefined') return;
     setSketch(art)
   }, [])
 
   return (
-    <div className="flex justify-center lg:h-[calc(100vh-200px)] lg:my-0 my-20 items-center px-4">
-      <div className="grid lg:grid-cols-2 gap-10 max-w-[1200px] w-full">
-        <div>
-          <h1 className="text-[4rem] font-sans font-bold tracking-tight text-foreground">Art</h1>
-          <ul className="list-disc text-xl ml-6 text-muted-foreground marker:text-primary">
-            {points.map((point, index) => (
-              <li key={index} className="mb-4">{point}</li>
-            ))}
-          </ul>
+    <div className="relative h-full w-full flex items-center justify-center bg-background overflow-hidden" ref={sketchRef}>
+      {/* Background Sketch */}
+      <div className="absolute inset-0 z-0">
+        {!restart && isVisible && sketch && (
+          <P5Wrapper setup={sketch.setup} draw={sketch.draw} />
+        )}
+      </div>
 
-          <div className="mt-10 ml-5">
-            <Button size="lg" onClick={() => { }}>
-              Explore
-            </Button>
-          </div>
+      {/* Dark Overlay for Contrast */}
+      <div className="absolute inset-0 z-10 bg-black/50 pointer-events-none" />
+
+      {/* Centered Overlay */}
+      <div className="relative z-20 text-center px-6 max-w-4xl pointer-events-none text-white drop-shadow-lg">
+        <h1 className="text-6xl md:text-9xl font-sans font-bold tracking-tighter mb-6 shadow-black/50">
+          Everything is Art
+        </h1>
+        <p className="text-xl md:text-3xl font-light mb-10 opacity-90 shadow-black/50">
+          When code meets creativity, boundaries dissolve.
+        </p>
+
+        <div className="pointer-events-auto flex items-center justify-center gap-4">
+          <Button size="lg" className="bg-white text-black hover:bg-white/90 shadow-xl" onClick={() => { }}>
+            Explore Gallery
+          </Button>
         </div>
-        <div className="flex flex-col relative min-h-[550px] justify-center items-center bg-card rounded-xl border border-border shadow-sm overflow-hidden" ref={sketchRef}>
-          {!restart && isVisible && (
-            <P5Wrapper setup={sketch.setup} draw={sketch.draw} />
-          )}
-          <div className="absolute bottom-4 right-4 z-10 cursor-pointer">
-            <RestartButton onClick={handleRestart} />
-          </div>
-        </div>
+      </div>
+
+      {/* Restart Button - Fixed Position */}
+      <div className="absolute bottom-8 right-8 z-30">
+        <RestartButton onClick={handleRestart} />
       </div>
     </div>
   );

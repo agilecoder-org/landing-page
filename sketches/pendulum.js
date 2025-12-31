@@ -15,7 +15,7 @@ const setup = (p, canvasParentRef) => {
 };
 
 const draw = (p) => {
-  p.clear();
+  p.background(3, 7, 18);
 
   const originX = p.width / 2;
   const originY = 0;

@@ -17,7 +17,7 @@ class Ball {
   }
 
   show(p5) {
-    p5.fill(100, 149, 237); // Primary Blue
+    p5.fill(100, 149, 237); // Cornflower Blue
     p5.noStroke();
     p5.ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
   }
@@ -25,11 +25,8 @@ class Ball {
 
 const setup = (p5, canvasParentRef) => {
   if (typeof window === 'undefined') return;
-  if (p5.displayWidth < 500) {
-    p5.createCanvas(350, 350).parent(canvasParentRef);
-  } else {
-    p5.createCanvas(500, 500).parent(canvasParentRef);
-  }
+  const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight);
+  canvas.parent(canvasParentRef);
 
   // Instance variables
   p5.gravity = 0.2;

@@ -1,14 +1,11 @@
 const setup = (p5, canvasParentRef) => {
   if (typeof window === 'undefined') return;
-  if (p5.displayWidth < 500) {
-    p5.createCanvas(350, 350).parent(canvasParentRef);
-  } else {
-    p5.createCanvas(500, 500).parent(canvasParentRef);
-  }
+  const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight);
+  canvas.parent(canvasParentRef);
 
   p5.factor = 2;
   p5.totalPoints = 150;
-  p5.radius = p5.width / 2 - 20;
+  p5.radius = Math.min(p5.width, p5.height) / 2 - 20;
 };
 
 const draw = (p5) => {
@@ -57,7 +54,11 @@ function getVector(index, p5) {
 const sketch = {
   setup,
   draw,
-  restartSketch
+  restartSketch,
+  windowResized: (p5) => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    p5.radius = Math.min(p5.width, p5.height) / 2 - 20;
+  },
 };
 
 export default sketch;

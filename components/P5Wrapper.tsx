@@ -49,7 +49,7 @@ const P5Wrapper = forwardRef<P5WrapperHandle, P5WrapperProps>(
       };
     }, []); // Empty dependency array - initialize only once
 
-    return <div className="hover:cursor-move" ref={sketchRef} />;
+    return <div className="w-full h-full hover:cursor-move" ref={sketchRef} />;
   }
 );
 

@@ -42,7 +42,7 @@ class Toothpick {
   }
 
   show(factor, p5) {
-    p5.stroke(148, 163, 184); // Slate 400 default
+    p5.stroke(100, 149, 237, 100); // Slate 400 default
     if (this.newPick) {
       p5.stroke(100, 149, 237); // Cornflower Blue for new
     }
@@ -53,11 +53,8 @@ class Toothpick {
 
 const setup = (p5, canvasParentRef) => {
   if (typeof window === 'undefined') return;
-  if (p5.displayWidth < 500) {
-    p5.createCanvas(350, 350).parent(canvasParentRef);
-  } else {
-    p5.createCanvas(500, 500).parent(canvasParentRef);
-  }
+  const canvas = p5.createCanvas(p5.windowWidth, p5.windowHeight);
+  canvas.parent(canvasParentRef);
 
   p5.minX = -p5.width / 2;
   p5.maxX = p5.width / 2;
@@ -101,7 +98,13 @@ const draw = (p5) => {
 const sketch = {
   setup,
   draw,
-  restartSketch: () => { }
+  restartSketch: () => { },
+  windowResized: (p5) => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    // Resetting minX/maxX might be needed if they were screen relative, but they are driven by picks expansion, so simple resize is likely fine for view.
+    p5.minX = -p5.width / 2;
+    p5.maxX = p5.width / 2;
+  }
 };
 
 export default sketch;

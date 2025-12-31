@@ -26,7 +26,7 @@ export default async function BlogListingPage({
 
     return (
         <main className="min-h-screen bg-background text-foreground flex flex-col">
-            <div className="flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 py-24">
+            <div className="flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 pt-12 pb-24">
                 <div className="mb-8">
                     <BackButton />
                 </div>

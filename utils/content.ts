@@ -184,3 +184,21 @@ export function getAllTags() {
 
     return Array.from(normalizedMap.entries()).sort((a, b) => b[1] - a[1])
 }
+
+// --- Art Blogs ---
+
+export function getArtBlogContent(category: string, slug: string): string | null {
+    const fileName = `${category}-${slug}.md`
+    const filePath = join(process.cwd(), "public/blogs", fileName) // Reading from public/blogs
+
+    if (!fs.existsSync(filePath)) {
+        return null
+    }
+
+    try {
+        return fs.readFileSync(filePath, "utf8")
+    } catch (e) {
+        console.error(`Error reading blog file: ${filePath}`, e)
+        return null
+    }
+}

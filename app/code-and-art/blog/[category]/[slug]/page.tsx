@@ -1,7 +1,10 @@
 import Blog from "@/components/code-and-art/BlogPage/Blog";
 import { sketchIndex } from "@/lib/code-and-art/data";
-import { Suspense } from "react";
-import { Metadata } from "next";
+import { getArtBlogContent } from "@/utils/content";
+import { MDX } from "@/components/mdx-components";
+import { notFound } from "next/navigation";
+import { SocialsBanner } from "@/components/SocialsBanner";
+import ImprovedFooter from "@/components/Footer";
 
 type Props = {
     params: Promise<{ category: string; slug: string }>
@@ -9,7 +12,7 @@ type Props = {
 
 export async function generateMetadata(
     { params }: Props
-): Promise<Metadata> {
+) {
     // read route params
     const { category, slug } = await params
 
@@ -45,10 +48,32 @@ export async function generateMetadata(
     };
 }
 
-export default function BlogPage() {
+export default async function BlogPage({ params }: Props) {
+    const { category, slug } = await params;
+
+    const sketch = sketchIndex.find(
+        (item) => item.slug === slug && item.category === category
+    );
+
+    const content = getArtBlogContent(category, slug);
+
+    if (!sketch) {
+        return notFound();
+    }
+
     return (
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-            <Blog />
-        </Suspense>
+        <>
+            <Blog slug={slug} category={category}>
+                <article className="prose prose-lg dark:prose-invert max-w-none text-muted-foreground prose-headings:text-foreground prose-strong:text-foreground prose-a:text-primary mb-12">
+                    {content ? (
+                        <MDX code={content} />
+                    ) : (
+                        <p>Content coming soon...</p>
+                    )}
+                    <SocialsBanner />
+                </article>
+            </Blog>
+            <ImprovedFooter />
+        </>
     );
 }

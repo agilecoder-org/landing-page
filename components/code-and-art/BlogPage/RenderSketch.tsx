@@ -37,8 +37,8 @@ const RenderSketch = ({ slug }: { slug: any }) => {
     };
 
     return (
-        <div className="my-5 grid grid-cols-1 border-[1px] md:grid-cols-5">
-            <div className="overflow-hidden relative mx-[-10px] md:mx-[0px] md:col-span-3 max-h-[520px] flex flex-col justify-center items-center">
+        <div className="my-8 md:grid md:grid-cols-5 gap-6 border rounded-xl overflow-hidden bg-card shadow-sm">
+            <div className="relative md:col-span-3 min-h-[500px] bg-secondary/20 flex flex-col justify-center items-center overflow-hidden border-b md:border-b-0 md:border-r border-border/50">
                 {currentSketch ? (
                     <>
                         <P5Wrapper
@@ -50,29 +50,66 @@ const RenderSketch = ({ slug }: { slug: any }) => {
                             mouseReleased={currentSketch.mouseReleased}
                         />
 
-                        <div className="absolute bottom-0 bg-white bg-opacity-80 left-0 p-4">
-                            <div className="flex w-[100px] justify-between items-center text-black">
-                                <ZoomIn onClick={() => currentSketch.zoomIn?.()} className="h-6 w-6 cursor-pointer" />
-                                <Maximize onClick={() => currentSketch.resetZoom?.()} className="h-6 w-6 cursor-pointer" />
-                                <ZoomOut onClick={() => currentSketch.zoomOut?.()} className="h-6 w-6 cursor-pointer" />
+                        {/* Floating Toolbar */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-2 rounded-full shadow-lg border border-border/50 transition-all opacity-100 hover:opacity-100">
+                            <div className="flex items-center gap-1 border-r border-border pr-2 mr-2">
+                                <button
+                                    onClick={() => currentSketch.zoomIn?.()}
+                                    className="p-2 hover:bg-secondary rounded-full transition-colors text-foreground/80 hover:text-foreground"
+                                    title="Zoom In"
+                                >
+                                    <ZoomIn className="h-4 w-4" />
+                                </button>
+                                <button
+                                    onClick={() => currentSketch.resetZoom?.()}
+                                    className="p-2 hover:bg-secondary rounded-full transition-colors text-foreground/80 hover:text-foreground"
+                                    title="Fit Screen"
+                                >
+                                    <Maximize className="h-4 w-4" />
+                                </button>
+                                <button
+                                    onClick={() => currentSketch.zoomOut?.()}
+                                    className="p-2 hover:bg-secondary rounded-full transition-colors text-foreground/80 hover:text-foreground"
+                                    title="Zoom Out"
+                                >
+                                    <ZoomOut className="h-4 w-4" />
+                                </button>
                             </div>
-                        </div>
-
-                        <div className="absolute bottom-0 flex w-[100px] justify-between items-center right-0 bg-white bg-opacity-80 p-4 text-black">
-                            <RefreshCw onClick={() => currentSketch.resetSketch?.(P5ref as any)} className="h-8 w-8 cursor-pointer" />
-                            <Download onClick={() => downloadImage()} className="h-6 w-6 cursor-pointer" />
+                            <div className="flex items-center gap-1">
+                                <button
+                                    onClick={() => currentSketch.resetSketch?.(P5ref as any)}
+                                    className="p-2 hover:bg-secondary rounded-full transition-colors text-foreground/80 hover:text-foreground"
+                                    title="Restart Sketch"
+                                >
+                                    <RefreshCw className="h-4 w-4" />
+                                </button>
+                                <button
+                                    onClick={() => downloadImage()}
+                                    className="p-2 hover:bg-secondary rounded-full transition-colors text-foreground/80 hover:text-foreground"
+                                    title="Download Snapshot"
+                                >
+                                    <Download className="h-4 w-4" />
+                                </button>
+                            </div>
                         </div>
                     </>
                 ) : (
-                    <p>No sketch available for this slug.</p>
+                    <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
+                        <p>No sketch available for this slug.</p>
+                    </div>
                 )}
             </div>
 
-            <div id="controls" className="md:mx-[-10px] md:col-span-2 flex flex-col justify-between md:min-h-[400px] w-[100%] p-5 text-foreground">
+            <div id="controls" className="md:col-span-2 flex flex-col p-6 bg-card text-card-foreground">
                 <div>
-                    <h3 className="text-[1.5rem] font-medium mb-3">Play with it!</h3>
-                    <div className="flex flex-col mt-5" id="interactions" />
-                    <div id="slider" />
+                    <h3 className="text-2xl font-semibold mb-1 tracking-tight">Interactive Demo</h3>
+                    <p className="text-sm text-muted-foreground mb-6">Adjust the parameters to explore the visualization.</p>
+
+                    <div className="space-y-6">
+                        {/* Controls injected here by p5.js */}
+                        <div className="flex flex-col space-y-4" id="interactions" />
+                        <div id="slider" />
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,43 +1,38 @@
 export const ColorPicker = (p5, label, config, configKey) => {
     // Create container
     const colorPickerContainer = p5.createDiv().parent(p5.select('#interactions'));
-    colorPickerContainer.style('margin', '0.5rem 0');
+    colorPickerContainer.addClass('flex items-center justify-between my-3 w-full p-2 rounded-lg bg-card/50 border border-border/50');
 
     const defaultColor = config[configKey];
 
-    // Label container
-    const labelDiv = p5.createDiv().parent(colorPickerContainer);
-    labelDiv.style('display', 'flex');
-    labelDiv.style('align-items', 'center');
+    // Left side (Label + Input)
+    const leftContainer = p5.createDiv().parent(colorPickerContainer);
+    leftContainer.addClass('flex items-center gap-3');
 
     // Label element
-    const labelElement = p5.createP(`${label}:`).parent(labelDiv);
-    labelElement.style('margin-right', '10px');
+    const labelElement = p5.createP(`${label}:`).parent(leftContainer);
+    labelElement.addClass('text-sm font-medium leading-none text-foreground');
 
     // HTML color picker element
     const colorPicker = document.createElement('input');
     colorPicker.type = 'color';
     colorPicker.value = `#${defaultColor.map(c => c.toString(16).padStart(2, '0')).join('')}`;
-    colorPicker.style.marginRight = '10px';
-    labelDiv.elt.appendChild(colorPicker);  // Use `.elt` to append raw HTML to p5 elements
+    colorPicker.className = 'h-8 w-8 rounded overflow-hidden border border-input bg-background p-0 cursor-pointer';
+    leftContainer.elt.appendChild(colorPicker);  // Use `.elt` to append raw HTML to p5 elements
 
-    // Button container
-    const buttonContainer = p5.createDiv().parent(colorPickerContainer);
-    buttonContainer.style('display', 'flex');
-    buttonContainer.style('align-items', 'center');
+    // Right side (Buttons)
+    const rightContainer = p5.createDiv().parent(colorPickerContainer);
+    rightContainer.addClass('flex items-center gap-2');
+
+    const buttonClass = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-7 px-2';
 
     // Random Color button
-    const randomColorButton = p5.createButton('Random').parent(buttonContainer);
-    randomColorButton.style('margin-right', '10px');
-    randomColorButton.style('border', '1px solid black');
-    randomColorButton.style('border-radius', '20%');
-    randomColorButton.style('padding', '0.05rem 0.2rem');
+    const randomColorButton = p5.createButton('Random').parent(rightContainer);
+    randomColorButton.addClass(buttonClass);
 
     // Reset button
-    const resetColorButton = p5.createButton('Reset').parent(buttonContainer);
-    resetColorButton.style('border', '1px solid black');
-    resetColorButton.style('border-radius', '20%');
-    resetColorButton.style('padding', '0.05rem 0.2rem');
+    const resetColorButton = p5.createButton('Reset').parent(rightContainer);
+    resetColorButton.addClass(buttonClass);
 
     // Color picker input event
     colorPicker.addEventListener('input', () => {
@@ -68,11 +63,6 @@ export const ColorPicker = (p5, label, config, configKey) => {
         colorPicker.value = `#${defaultColor.map(c => c.toString(16).padStart(2, '0')).join('')}`;
         p5.redraw();
     });
-
-    colorPickerContainer.style('margin-bottom', '10px');
-    colorPickerContainer.style('display', 'flex');
-    colorPickerContainer.style('align-items', 'center');
-    colorPickerContainer.style('justify-content', 'space-between');
 
     return colorPickerContainer;
 };

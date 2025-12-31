@@ -58,7 +58,7 @@ const Fractals: React.FC = () => {
 
         <div className="pointer-events-auto flex items-center justify-center gap-4">
           <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 shadow-xl">
-            <Link href="/fractals">Explore Full</Link>
+            <Link href="/code-and-art/blog?category=fractals">Explore Full</Link>
           </Button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import art from '@/sketches/art';
+import Link from 'next/link';
 import RestartButton from '@/components/RestartButton';
 import useIntersection from '@/hooks/useIntersection';
 import dynamic from 'next/dynamic';
@@ -57,8 +58,8 @@ const Art: React.FC = () => {
         </p>
 
         <div className="pointer-events-auto flex items-center justify-center gap-4">
-          <Button size="lg" className="bg-white text-black hover:bg-white/90 shadow-xl" onClick={() => { }}>
-            Explore Gallery
+          <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 shadow-xl">
+            <Link href="/code-and-art/blog">Explore Gallery</Link>
           </Button>
         </div>
       </div>

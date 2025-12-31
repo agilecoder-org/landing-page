@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef } from 'react';
 import pendulum from "@/sketches/pendulum"
+import { motion } from 'framer-motion';
 import { ChevronsDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -20,18 +21,33 @@ const Opening: React.FC = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-9xl font-sans font-bold tracking-tighter text-foreground mb-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl lg:text-9xl font-sans font-bold tracking-tighter text-foreground mb-6"
+        >
           Artful <span className="text-primary">Coding</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto"
+        >
           Where logic meets imagination in the digital realm.
-        </p>
+        </motion.p>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce text-muted-foreground">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce text-muted-foreground"
+      >
         <ChevronsDown size={24} />
-      </div>
+      </motion.div>
     </div>
   );
 };

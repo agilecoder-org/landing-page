@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef } from 'react';
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
 import particles from "@/sketches/particles";
 
 const P5Wrapper = dynamic(() => import('@/components/P5Wrapper'), {
@@ -19,13 +20,20 @@ const CreativeCoding: React.FC = () => {
 
       {/* Minimal Overlay Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl">
-        <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-foreground mb-8">
-          Algorithms as our <span className="text-primary">Brush</span>. <br />
-          Code as our <span className="text-primary">Canvas</span>.
-        </h2>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Creative coding breaks the boundary between tool and art, turning cold logic into fluid expression.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-foreground mb-8">
+            Algorithms as our <span className="text-primary">Brush</span>. <br />
+            Code as our <span className="text-primary">Canvas</span>.
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Creative coding breaks the boundary between tool and art, turning cold logic into fluid expression.
+          </p>
+        </motion.div>
       </div>
     </div>
   );

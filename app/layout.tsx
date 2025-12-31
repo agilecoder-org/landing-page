@@ -12,11 +12,21 @@ const inter = Inter({
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ""
 
 export const metadata: Metadata = {
-  title: "AgileCoder - Innovate. Build. Deliver.",
+  metadataBase: new URL("https://www.agilecoder.in"),
+  title: {
+    default: "AgileCoder - Innovate. Build. Deliver.",
+    template: "%s | AgileCoder",
+  },
   description:
     "From cutting-edge dev tools and plugins to full-fledged websites — we craft and ship modern digital experiences at speed.",
+  keywords: ["Software Development", "Web Development", "AgileCoder", "Tech Blog", "Creative Coding", "Books", "Developer Tools"],
+  authors: [{ name: "AgileCoder Team" }],
+  creator: "AgileCoder",
+  publisher: "AgileCoder",
   icons: {
     icon: "/agilecoder-dark.png",
+    shortcut: "/agilecoder-dark.png",
+    apple: "/agilecoder-dark.png",
   },
   openGraph: {
     title: "AgileCoder - Innovate. Build. Deliver.",
@@ -26,29 +36,27 @@ export const metadata: Metadata = {
     siteName: "AgileCoder",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "https://www.agilecoder.in/default-og.png", // default OG image
-        width: 1200,
-        height: 630,
-        alt: "AgileCoder",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AgileCoder - Innovate. Build. Deliver.",
     description:
       "From cutting-edge dev tools and plugins to full-fledged websites — we craft and ship modern digital experiences at speed.",
-    images: ["https://www.agilecoder.in/default-og.png"],
     creator: "@agilecoder_in",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
-    canonical: "https://www.agilecoder.in",
+    canonical: "/",
   },
 }
 

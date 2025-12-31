@@ -6,6 +6,19 @@ import ImprovedFooter from "@/components/Footer"
 export const metadata: Metadata = {
     title: "Books | AgileCoder",
     description: "Books and resources for modern developers.",
+    openGraph: {
+        title: "Books | AgileCoder",
+        description: "Books and resources for modern developers.",
+        url: "https://www.agilecoder.in/books",
+        siteName: "AgileCoder",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Books | AgileCoder",
+        description: "Books and resources for modern developers.",
+        creator: "@agilecoder_in",
+    },
 }
 
 export default function BooksPage() {

@@ -1,6 +1,20 @@
 import BackButton from '@/components/BackToHome'
 import React from 'react'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | AgileCoder",
+  description: "Privacy Policy for AgileCoder. Learn how we collect, use, and protect your information.",
+  openGraph: {
+    title: "Privacy Policy | AgileCoder",
+    description: "Privacy Policy for AgileCoder. Learn how we collect, use, and protect your information.",
+    url: "https://www.agilecoder.in/privacy-policy",
+    siteName: "AgileCoder",
+    type: "website",
+  },
+}
+
 const PrivacyPolicy = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 text-foreground">

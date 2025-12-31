@@ -1,6 +1,20 @@
 import BackButton from '@/components/BackToHome'
 import React from 'react'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | AgileCoder",
+  description: "Terms and Conditions for browsing and using AgileCoder services.",
+  openGraph: {
+    title: "Terms and Conditions | AgileCoder",
+    description: "Terms and Conditions for browsing and using AgileCoder services.",
+    url: "https://www.agilecoder.in/terms-of-service",
+    siteName: "AgileCoder",
+    type: "website",
+  },
+}
+
 const TermsOfService = () => {
   return (
     <div className="max-w-3xl mx-auto px-5 py-10">

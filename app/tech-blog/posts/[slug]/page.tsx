@@ -88,7 +88,7 @@ export default async function BlogEntry({ params }: Params) {
                                 {post.title}
                             </h1>
 
-                            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6 text-sm">
+                            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-4 text-sm">
                                 <div className="flex items-center gap-2">
                                     <Calendar className="h-4 w-4" />
                                     {formatDate(post.date)}
@@ -109,18 +109,18 @@ export default async function BlogEntry({ params }: Params) {
                             </div>
 
                             {post.tags && (
-                                <div className="mb-8 not-prose">
+                                <div className="mb-4 not-prose">
                                     <Tags tags={post.tags} />
                                 </div>
                             )}
 
-                            <div className="rounded-xl border bg-muted w-full aspect-video object-cover mb-10 shadow-sm overflow-hidden relative">
+                            <div className="rounded-xl border bg-muted w-full mb-10 shadow-sm overflow-hidden not-prose">
                                 {post.coverImage ? (
                                     // eslint-disable-next-line @next/next/no-img-element
                                     <img
                                         src={post.coverImage}
                                         alt={post.title}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-auto"
                                     />
                                 ) : (
                                     <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-muted/50 to-muted text-muted-foreground/50">

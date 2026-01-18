@@ -13,7 +13,8 @@ export default function Header() {
     { name: "Home", url: "/" },
     { name: "Code & Art", url: "/code-and-art" },
     { name: "Tech Blog", url: "/tech-blog" },
-    { name: "Books", url: "/books" }
+    { name: "Books", url: "/books" },
+    { name: "Games", url: "/games" }
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);

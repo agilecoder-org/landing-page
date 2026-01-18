@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function GamesPage() {
     const games = [
         {
-            name: "Memory Match",
-            description: "Find matching pairs in this classic memory game. Single player or local multiplayer.",
+            name: "Secrets of the Sands",
+            description: "Uncover ancient hieroglyphs in this memory matching expedition. Single player archaeological adventure.",
             href: "/games/memory-match",
             icon: <Brain className="relative w-12 h-12 text-primary mb-6" />
         },
